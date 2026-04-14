@@ -57,7 +57,7 @@
   .home-animated-text { font-size: 40px; }
 }
 @media (max-width: 767px) {
-  .home-animated-text { font-size: 36px; }
+  .home-animated-text { font-size: 36px; clip-path: none; animation: none; }
 }
 
 /* ================================================
@@ -165,6 +165,9 @@
 }
 @media (max-width: 767px) {
   .home-main .home-subtitle { font-size: 22px; }
+}
+@media (max-width: 767px) {
+  .home-top::after { bottom: 4rem; }
 }
 
 /* ================================================

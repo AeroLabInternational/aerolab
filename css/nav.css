@@ -116,40 +116,26 @@ header .nav-theme-toggle.is-dark .theme-icon--sun  { display: none; }
 header .nav-theme-toggle.is-dark .theme-icon--moon { display: block; }
 
 @media (max-width: 767px) {
-  header .nav-lang {
-    right: 86px;
+  header .nav-screen {
+    width: 30px;
     top: 30px;
-    height: 20px; /* center = 30+10 = 40px, matches mobile hamburger */
+    right: 20px;
+  }
+  header .nav-lang {
+    right: 72px;
+    top: 33px;
+    height: 28px;
   }
   header .nav-theme-toggle {
-    right: 174px;
-    top: 30px;
-    height: 20px;
-    width: 24px;
+    right: 152px;
+    top: 33px;
+    height: 28px;
+    width: 28px;
   }
   header .nav-theme-toggle .theme-icon--sun,
   header .nav-theme-toggle .theme-icon--moon {
     width: 14px;
     height: 14px;
-  }
-}
-@media (max-width: 480px) {
-  header .nav-lang {
-    right: 72px;
-  }
-  header .nav-theme-toggle {
-    right: 158px;
-  }
-}
-@media (max-width: 767px) {
-  header .nav-screen {
-    width: 6%;
-    top: 30px;
-  }
-}
-@media (max-width: 480px) {
-  header .nav-screen {
-    width: 12%;
   }
 }
 

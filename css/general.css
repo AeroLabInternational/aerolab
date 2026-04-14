@@ -160,7 +160,7 @@
 
 /* Mobile (≤ 767px) */
 @media screen and (max-width: 767px) {
-  .general-heading-inner { padding: 2.5rem 1.25rem; min-height: 100svh; display: flex; align-items: center; justify-content: center; }
+  .general-heading-inner { padding: 2rem 1.25rem; }
   .general-heading p { font-size: 1.25rem; line-height: 2; }
 }
 

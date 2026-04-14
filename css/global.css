@@ -197,7 +197,7 @@ html {
     font-family: "Noto Sans JP", sans-serif;
     font-size: 1.28vw;
     line-height: 1.8;
-    color: #000;
+    color: var(--text-dark);
     font-weight: 300;
     height: 100%;
     width: 100%;
@@ -235,7 +235,7 @@ html.fixed {
 
 @media (max-width: 767px) {
     html {
-        font-size: 4.1vw;
+        font-size: 3.8vw;
     }
 }
 

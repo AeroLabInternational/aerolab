@@ -233,5 +233,7 @@
 /* Mobile (≤ 767px) */
 @media screen and (max-width: 767px) {
   .paint-results-inner { padding: 4.375rem 1.25rem; }
-  .paint-results-img-wrap { height: 110px; }
+  .paint-results-body { flex-direction: column; }
+  .paint-results-center-divider { width: 100%; height: 3px; }
+  .paint-results-img-wrap { height: 180px; }
 }
