@@ -8,7 +8,7 @@
 }
 .tech-inner {
   width: 100%;
-  color: #000;
+  color: var(--text-dark);
 }
 
 .tech-wrapper {

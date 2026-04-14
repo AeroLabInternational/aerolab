@@ -502,7 +502,7 @@ a.aircraft-type-card {
 @media (max-width: 767px) {
     .specs-section-title { font-size: 2rem; }
     .section-subtitle { font-size: 1rem; margin-bottom: 2rem; }
-    .aircraft-types-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .aircraft-types-grid { grid-template-columns: 1fr; gap: 1rem; }
     .aircraft-type-card { padding: 1.25rem; }
     .aircraft-type-card:hover { transform: none; }
     .aircraft-type-icon { width: 4rem; }

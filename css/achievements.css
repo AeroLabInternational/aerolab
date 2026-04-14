@@ -8,7 +8,7 @@
 }
 .magazine-inner {
   width: 100%;
-  color: #000;
+  color: var(--text-dark);
   padding: 7rem 1.5rem;
 }
 /* 13-inch (≤ 1280px) */
@@ -28,6 +28,7 @@
   .magazine-card-number { font-size: 0.9rem; }
   .magazine-card-textBox p,
   .magazine-card-textBox li { font-size: 1rem; line-height: 1.9; }
+  .magazine-pdf-canvas { width: 100% !important; height: auto !important; }
 }
 
 .magazine-wrapper {
@@ -184,7 +185,7 @@
   .dealer-inner { padding: 1.5rem 1rem; }
   .dealer-card { flex-direction: column; gap: 0; }
   .dealer-card:nth-child(even) { flex-direction: column; }
-  .dealer-card-imgBox { width: 100%; min-height: 14rem; order: 2; }
+  .dealer-card-imgBox { width: 100%; height: 14rem; min-height: unset; order: 2; }
   .dealer-card-textBox { padding: 1.5rem; order: 1; }
   .dealer-card-img { height: auto; }
   .dealer-card-title { font-size: 1.1rem; }
@@ -201,7 +202,7 @@
 }
 .ys11-inner {
   width: 100%;
-  color: #000;
+  color: var(--text-dark);
   border-bottom: none;
 }
 

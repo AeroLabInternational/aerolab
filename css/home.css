@@ -57,7 +57,13 @@
   .home-animated-text { font-size: 40px; }
 }
 @media (max-width: 767px) {
-  .home-animated-text { font-size: 36px; clip-path: none; animation: none; }
+  .home-animated-text {
+    font-size: 36px;
+    clip-path: none !important;
+    animation: none !important;
+    white-space: normal;
+    opacity: 1 !important;
+  }
 }
 
 /* ================================================
@@ -210,7 +216,7 @@
   flex: 0 0 42%;
 }
 @media (max-width: 767px) {
-  .home-info-img { flex: none; width: 80%; margin: 0 auto; }
+  .home-info-img { flex: none; width: 100%; margin: 0 auto; }
 }
 
 .home-info-img img {

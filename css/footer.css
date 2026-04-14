@@ -60,9 +60,13 @@ footer .footer-copyright {
 @media (max-width: 767px) {
     footer .footer-wrap { flex-direction: column; align-items: center; padding: 0 1.375rem; gap: 1.375rem; }
     footer .footer-company { width: 100%; text-align: center; }
+    footer .footer-company p { font-size: 0.9rem; }
     footer .footer-menu { width: 100%; text-align: center; }
     footer .footer-menu ul { flex-direction: column; gap: 0.875rem; justify-content: center; align-items: center; }
+    footer .footer-menu ul dt,
+    footer .footer-menu ul .link { font-size: 1.2rem; }
+    footer .footer-menu dd { font-size: 0.9rem; }
     footer .footer-menu li:not(.link) { display: block; }
-    footer .footer-copyright { margin-top: 2.25rem; padding: 0 1.375rem; text-align: center; }
+    footer .footer-copyright { margin-top: 2.25rem; padding: 0 1.375rem; text-align: center; font-size: 0.9rem; }
 }
 
