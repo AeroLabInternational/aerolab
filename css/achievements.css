@@ -1,0 +1,287 @@
+/* ================================================
+   Magazine Section
+   ================================================ */
+
+.magazine {
+  width: 100%;
+  background: #fff;
+}
+.magazine-inner {
+  width: 100%;
+  color: #000;
+  padding: 7rem 1.5rem;
+}
+/* 13-inch (≤ 1280px) */
+@media screen and (max-width: 1280px) {
+  .magazine-inner { padding: 6rem 1.5rem; }
+}
+/* iPad (≤ 1024px) */
+@media screen and (max-width: 1024px) {
+  .magazine-inner { padding: 5rem 1.25rem; }
+  .magazine-pdf { padding: 1rem; }
+}
+/* Mobile (≤ 767px) */
+@media screen and (max-width: 767px) {
+  .magazine-inner { padding: 5rem 1.25rem 4.375rem; }
+  .magazine-card { padding: 1.25rem; }
+  .magazine-pdf { padding: 0.75rem; }
+}
+
+.magazine-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.magazine-card {
+  padding: 2.5rem;
+}
+.magazine-card-textBox {
+  width: 100%;
+}
+.magazine-card-number {
+  font-size: 0.875rem;
+  color: #999;
+  letter-spacing: 0.06rem;
+  margin-bottom: 0.5rem;
+}
+.magazine-card-number-pozi { font-weight: 600; color: var(--text-dark); }
+
+
+.magazine-card-text .link {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.4rem 1rem;
+  background: var(--primary-color);
+  color: #fff !important;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+.magazine-card-text .link:hover {
+  background: var(--secondary-color);
+  color: #fff !important;
+}
+.magazine-pdf {
+  width: 100%;
+  padding: 1.5rem;
+}
+.magazine-pdf-canvas {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+.magazine-pdf-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-top: 1.25rem;
+}
+.magazine-pdf-btn {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+.magazine-pdf-btn:hover:not(:disabled) {
+  background: var(--secondary-color);
+}
+.magazine-pdf-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.magazine-pdf-info {
+  font-size: 0.9375rem;
+  color: #444;
+  min-width: 5rem;
+  text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  .magazine-pdf { padding: 1rem; }
+}
+@media screen and (max-width: 767px) {
+  .magazine-pdf { padding: 0.75rem; }
+}
+
+/* ================================================
+   Dealer Section
+   ================================================ */
+
+.dealer {
+  width: 100%;
+  background: #fff;
+}
+.dealer-inner {
+  width: 100%;
+  color: var(--text-dark);
+}
+
+.dealer-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.dealer-card {
+  display: flex;
+  align-items: stretch;
+  gap: 2.5rem;
+  overflow: hidden;
+}
+.dealer-card:nth-child(even) { flex-direction: row-reverse; }
+.dealer-card-imgBox {
+  width: 40%;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+}
+.dealer-card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+.dealer-card-textBox {
+  flex: 1;
+  min-width: 0;
+  padding: 2rem 1.75rem;
+}
+
+
+
+/* 13-inch (≤ 1280px) */
+@media screen and (max-width: 1280px) {
+  .dealer-inner { padding: 2rem 1.5rem; }
+}
+/* iPad (≤ 1024px) */
+@media screen and (max-width: 1024px) {
+  .dealer-inner { padding: 1.5rem 1.25rem; }
+}
+/* Mobile (≤ 767px) */
+@media screen and (max-width: 767px) {
+  .dealer-inner { padding: 1.5rem 1rem; }
+  .dealer-card { flex-direction: column; gap: 0; }
+  .dealer-card:nth-child(even) { flex-direction: column; }
+  .dealer-card-imgBox { width: 100%; min-height: 14rem; }
+  .dealer-card-img { height: auto; }
+  .dealer-card-textBox { padding: 1.5rem; }
+}
+
+/* ================================================
+   YS-11 Section
+   ================================================ */
+   
+.ys11 {
+  width: 100%;
+  background: #fff;
+}
+.ys11-inner {
+  width: 100%;
+  color: #000;
+  border-bottom: none;
+}
+
+.ys11-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+.ys11-card {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  overflow: hidden;
+}
+.ys11-card:nth-child(even) {
+  grid-template-columns: 1fr 40%;
+}
+.ys11-card:nth-child(even) .ys11-card-imgBox {
+  grid-column: 2;
+  grid-row: 1;
+}
+.ys11-card:nth-child(even) .ys11-card-textBox {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.ys11-card-imgBox {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: stretch;
+  overflow: hidden;
+  min-height: 18rem;
+}
+.ys11-card-img {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ys11-card-textBox {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 2rem 1.75rem;
+  min-width: 0;
+}
+
+
+
+/* 13-inch (≤ 1280px) */
+@media screen and (max-width: 1280px) {
+  .ys11-inner { padding: 2rem 1.5rem; }
+}
+/* iPad (≤ 1024px) */
+@media screen and (max-width: 1024px) {
+  .ys11-inner { padding: 1.5rem 1.25rem; }
+}
+/* Mobile (≤ 767px) */
+@media screen and (max-width: 767px) {
+  .ys11-inner { padding: 1.5rem 1rem; }
+  .ys11-card { grid-template-columns: 1fr; }
+  .ys11-card:nth-child(even) { grid-template-columns: 1fr; }
+  .ys11-card-imgBox { grid-column: 1; grid-row: 1; min-height: 14rem; }
+  .ys11-card-textBox { grid-column: 1; grid-row: 2; }
+  .ys11-card:nth-child(even) .ys11-card-imgBox { grid-column: 1; grid-row: 1; }
+  .ys11-card:nth-child(even) .ys11-card-textBox { grid-column: 1; grid-row: 2; }
+  .ys11-card-textBox { padding: 1.5rem; }
+}
+.ys11-movie-area {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.ys11-movie-area iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .ys11-movie-inner { padding: 0 1.25rem 2.5rem; }
+}

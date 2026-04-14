@@ -1,0 +1,454 @@
+/* ================================================
+   Hero Animation
+   ================================================ */
+
+.home-top-text {
+  animation: fv-fadein 0.5s ease forwards;
+}
+@keyframes fv-fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.home-animated-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 82px;
+  color: #fff;
+  white-space: nowrap;
+  display: block;
+  padding: 0 0.1em;
+  clip-path: inset(0 100% 0 0);
+  animation: draw-hero-text 5s ease-out forwards;
+}
+@keyframes draw-hero-text {
+  to { clip-path: inset(0 -0.2em 0 0); }
+}
+@media (max-width: 1280px) {
+  .home-animated-title { font-size: 68px; }
+}
+@media (max-width: 1024px) {
+  .home-animated-title { font-size: 54px; }
+}
+@media (max-width: 767px) {
+  .home-animated-title { font-size: 42px; }
+}
+
+.home-animated-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 52px;
+  color: #fff;
+  white-space: nowrap;
+  display: inline-block;
+  padding: 0 0.15em 0.3em 0;
+  clip-path: inset(0 100% 0 0);
+  animation: draw-section-text 1.5s cubic-bezier(0.37, 0, 0.63, 1) forwards;
+  animation-play-state: paused;
+}
+.home-animated-text.in-view {
+  animation-play-state: running;
+}
+@keyframes draw-section-text {
+  to { clip-path: inset(0 -0.2em 0 0); }
+}
+@media (max-width: 1280px) {
+  .home-animated-text { font-size: 44px; }
+}
+@media (max-width: 1024px) {
+  .home-animated-text { font-size: 40px; }
+}
+@media (max-width: 767px) {
+  .home-animated-text { font-size: 32px; }
+}
+
+/* ================================================
+   home-top
+   ================================================ */
+
+.home-top {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+/* ── Scroll indicator ── */
+.home-top::after {
+  content: "";
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 78px;
+  height: 78px;
+  background-image: url('/assets/general/Scroll.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 3;
+  animation: scroll-bounce 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.85; }
+  50%       { transform: translateY(10px); opacity: 1; }
+}
+/* Note: scroll-bounce is defined canonically in general.css. This local
+   definition exists only as a fallback for the home page's ::after pseudo. */
+
+.home-movie {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.home-movie::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.home-movie video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.home-top-spacer {
+  position: relative;
+  overflow: visible;
+  box-sizing: border-box;
+  display: block;
+}
+
+.home-top-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.home-top-text {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.home-main .home-subtitle {
+  font-size: 28px;
+  color: #fff;
+  margin-top: 0.75rem;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: home-subtitle-fadein 2.0s ease-in-out forwards;
+  animation-delay: 2.5s;
+}
+@keyframes home-subtitle-fadein {
+  0%   { opacity: 0; filter: blur(15px); transform: translateY(12px); }
+  50%  { opacity: 0; filter: blur(15px); transform: translateY(12px); }
+  100% { opacity: 1; filter: blur(0);    transform: translateY(0); }
+}
+@media (max-width: 1280px) {
+  .home-main .home-subtitle { font-size: 24px; }
+}
+@media (max-width: 1024px) {
+  .home-main .home-subtitle { font-size: 20px; }
+}
+@media (max-width: 767px) {
+  .home-main .home-subtitle { font-size: 16px; }
+}
+
+/* ================================================
+   home-info
+   ================================================ */
+
+.home-info {
+  width: 100%;
+}
+
+.home-info-inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.home-info-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home-info-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+@media (max-width: 1280px) {
+  .home-info-content { gap: 2.5rem; }
+}
+@media (max-width: 1024px) {
+  .home-info-content { gap: 2rem; }
+}
+@media (max-width: 767px) {
+  .home-info-content { flex-direction: column; gap: 1.5rem; }
+}
+
+.home-info-img {
+  flex: 0 0 42%;
+}
+@media (max-width: 767px) {
+  .home-info-img { flex: none; width: 80%; margin: 0 auto; }
+}
+
+.home-info-img img {
+  width: 100%;
+  display: block;
+}
+
+.home-info-text {
+  flex: 1;
+  font-size: 16px;
+  line-height: 2.0;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .home-info-text { font-size: 0.9375rem; }
+}
+
+/* ================================================
+   home-linkbox
+   ================================================ */
+
+.home-linkbox {
+  width: 100%;
+}
+
+.home-linkbox-inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.home-linkbox-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+.home-linkbox-wrap:last-child {
+  border-bottom: none;
+}
+@media (max-width: 1024px) {
+  .home-linkbox-wrap { padding: 2rem 0; }
+}
+@media (max-width: 767px) {
+  .home-linkbox-wrap { flex-direction: column; padding: 2rem 0; gap: 1.5rem; }
+}
+
+.home-linkbox-left {
+  width: 36%;
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .home-linkbox-left { width: 100%; }
+}
+
+.home-linkbox-title {
+  margin: 0 0 2rem;
+}
+
+.home-linkbox-left p {
+  font-size: 16px;
+  line-height: 2.0;
+  letter-spacing: 0.04em;
+}
+@media (max-width: 767px) {
+  .home-linkbox-left p { font-size: 0.9375rem; }
+}
+
+.home-linkbox-right {
+  width: 50%;
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .home-linkbox-right { width: 100%; }
+}
+
+.home-linkbox-right ul {
+  margin: 0;
+  border-top: 1px solid #fff;
+}
+
+.home-linkbox-right li {
+  margin: 0;
+  padding: 20px 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 20px;
+  border-bottom: 1px solid #fff;
+  background: url(/assets/top_sec03_arrow.svg) no-repeat right center;
+  border-left: 3px solid transparent;
+  transition: padding-left var(--transition), border-left-color var(--transition);
+}
+.home-linkbox-right li:hover {
+  padding-left: 18px;
+  border-left-color: #fff;
+}
+@media (max-width: 1280px) {
+  .home-linkbox-right li { font-size: 18px; }
+}
+@media (max-width: 1024px) {
+  .home-linkbox-right li { font-size: 1rem; padding: 18px 0; }
+}
+@media (max-width: 767px) {
+  .home-linkbox-right li { font-size: 1rem; padding: 16px 0; }
+}
+
+.home-linkbox-right li span {
+  padding-top: 4px;
+  display: block;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+  .home-linkbox-right li span { font-size: 0.75rem; }
+}
+
+.home-linkbox-right ul li a {
+  display: block;
+  color: #fff;
+  transition: color var(--transition);
+}
+.home-linkbox-right li a:hover {
+  color: var(--color-muted);
+}
+
+/* ================================================
+   home-group
+   ================================================ */
+
+.home-group {
+  width: 100%;
+}
+
+.home-group-inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.home-group-title {
+  margin: 0 0 2rem;
+}
+
+.home-group-subtitle {
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: 0.04em;
+  line-height: 1.8;
+  margin: 0 0 2.5rem;
+}
+
+.home-group-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+@media (max-width: 1280px) {
+  .home-group-cards { gap: 1.5rem; }
+}
+@media (max-width: 767px) {
+  .home-group-cards { flex-direction: column; align-items: center; }
+}
+
+.home-group-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  max-width: 420px;
+  min-width: 0;
+  height: 140px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+.home-group-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 1280px) {
+  .home-group-card { height: 130px; }
+}
+@media (max-width: 1024px) {
+  .home-group-card { height: 125px; }
+}
+@media (max-width: 767px) {
+  .home-group-card { flex: none; width: 100%; max-width: 420px; height: 120px; }
+}
+
+.home-group-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.home-group-card:not(.home-group-card--korea) img {
+  object-fit: cover;
+}
+
+.home-group-card--korea,
+.home-group-card--aircraftspecs {
+  position: relative;
+  padding: 0;
+}
+
+.home-group-card-background {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  filter: blur(4px) brightness(0.45);
+  transform: scale(1.08);
+}
+
+.home-group-card-logo {
+  position: relative;
+  z-index: 1;
+}
+.home-group-card--korea .home-group-card-logo {
+  width: auto !important;
+  height: 70px !important;
+  max-width: 60% !important;
+  object-fit: contain !important;
+}
+.home-group-card--aircraftspecs .home-group-card-logo {
+  width: auto !important;
+  height: 140px !important;
+  max-width: 80% !important;
+  object-fit: contain !important;
+}
+@media (max-width: 1280px) {
+  .home-group-card--aircraftspecs .home-group-card-logo { height: 120px !important; }
+}
+@media (max-width: 767px) {
+  .home-group-card--aircraftspecs .home-group-card-logo { height: 100px !important; }
+}

@@ -1,0 +1,256 @@
+/* ================================================
+   Contact Inquiry Section
+   ================================================ */
+
+.contact-inquiry {
+  width: 100%;
+  background: #fff;
+}
+
+.contact-inquiry-inner {
+  width: 100%;
+  max-width: 1440px;
+}
+
+
+
+.contact-inquiry-lead {
+  text-align: center;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin-bottom: 3rem;
+}
+
+.contact-inquiry-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+/* Card */
+
+.contact-inquiry-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Card headers */
+
+.contact-inquiry-card-header {
+  padding: 1.25rem 1.5rem;
+}
+
+.contact-inquiry-card-header--en,
+.contact-inquiry-card-header--sales,
+.contact-inquiry-card-header--mro,
+.contact-inquiry-card-header--pilot,
+.contact-inquiry-card-header--shop  { background: var(--primary-color); }
+
+.contact-inquiry-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+/* Card body */
+
+.contact-inquiry-card-body {
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+  background: var(--light-bg);
+}
+
+.contact-inquiry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact-inquiry-list li a {
+  display: inline-block;
+  font-size: 0.9375rem;
+  color: var(--text-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.contact-inquiry-list li a:hover {
+  color: var(--secondary-color);
+}
+
+/* ================================================
+   Location Section
+   ================================================ */
+
+.location {
+  width: 100%;
+  background: #fff;
+}
+
+.location-inner {
+  width: 100%;
+  max-width: 1440px;
+  border-bottom: none;
+}
+
+
+
+/* Each location entry */
+
+.location-item {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  gap: 0;
+  align-items: stretch;
+  padding: 0;
+  margin-bottom: 1.75rem;
+  overflow: hidden;
+}
+
+.location-item:last-child {
+  margin-bottom: 0;
+}
+
+
+
+/* Info side */
+
+.location-info {
+  padding: 2rem;
+}
+
+.location-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 1.25rem 0;
+}
+
+.location-detail {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.location-row {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.location-row dt {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.location-row dd {
+  margin: 0;
+  color: var(--text-dark);
+}
+
+.location-row dd a {
+  color: var(--text-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.location-row dd a:hover {
+  color: var(--secondary-color);
+}
+
+.location-link {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.4rem 1rem;
+  background: var(--primary-color);
+  color: #fff !important;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.location-link:hover {
+  background: var(--secondary-color);
+  color: #fff !important;
+}
+
+/* Map side */
+
+.location-map {
+  width: 100%;
+  height: 100%;
+  min-height: 16rem;
+  overflow: hidden;
+}
+
+.location-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ================================================
+   Responsive
+   ================================================ */
+
+/* 13-inch (≤ 1280px) */
+@media (max-width: 1280px) {
+  .contact-inquiry-wrapper {
+    gap: 1.25rem;
+  }
+  .location-info { padding: 1.75rem; }
+}
+
+/* iPad (≤ 1024px) */
+@media (max-width: 1024px) {
+  .contact-inquiry-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .location-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile (≤ 767px) */
+@media (max-width: 767px) {
+  .contact-inquiry-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .location-item {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .location-info {
+    padding: 1.5rem;
+  }
+
+  .location-map {
+    min-height: 14rem;
+    aspect-ratio: 4 / 3;
+  }
+
+  .location-row {
+    grid-template-columns: 5.5rem 1fr;
+  }
+}

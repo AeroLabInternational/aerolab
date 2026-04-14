@@ -1,0 +1,95 @@
+/* ================================================
+   Security Policy Sections
+   ================================================ */
+
+.policy-section { width: 100%; background: #fff; }
+.policy-section-inner {
+  width: 100%;
+  max-width: 1440px;
+}
+.policy-section-inner:last-child { border-bottom: none; }
+.policy-section-subtitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+.policy-section-subtitle:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+.policy-section-lead {
+  font-size: 0.9375rem;
+  line-height: 2.2;
+  color: var(--text-dark);
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.policy-section-text {
+  font-size: 0.9375rem;
+  line-height: 2.2;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+.policy-section-text:last-of-type { margin-bottom: 0; }
+
+/* Content card */
+.policy-content-card {
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+/* Numbered list */
+.policy-list {
+  padding-left: 1.5rem;
+  margin-bottom: 0;
+}
+.policy-list li {
+  font-size: 0.9375rem;
+  line-height: 2.2;
+  color: var(--text-dark);
+  list-style: decimal;
+  padding-left: 0.25rem;
+}
+
+/* Sign block */
+.policy-sign {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  text-align: right;
+}
+.policy-sign-date {
+  font-size: 0.9375rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+.policy-sign-company {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+
+
+/* 13-inch (≤ 1280px) */
+@media screen and (max-width: 1280px) {
+  .policy-section-inner { padding: 4rem 2.5rem; }
+  .policy-content-card { padding: 1.75rem; }
+}
+
+/* iPad (≤ 1024px) */
+@media screen and (max-width: 1024px) {
+  .policy-section-inner { padding: 3.5rem 1.25rem; }
+  .policy-content-card { padding: 1.5rem; }
+}
+
+/* Mobile (≤ 767px) */
+@media screen and (max-width: 767px) {
+  .policy-section-inner { padding: 2.5rem 1.25rem; }
+  .policy-content-card { padding: 1.25rem; }
+}

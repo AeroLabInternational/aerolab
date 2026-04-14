@@ -1,0 +1,107 @@
+/* ================================================
+   Recruitment Content Section
+   ================================================ */
+
+.recruitment-text {
+  width: 100%;
+  background: #fff;
+}
+.recruitment-container {
+  width: 100%;
+  padding: 5rem 1.25rem;
+  color: var(--text-dark);
+  border-bottom: none;
+}
+
+.recruitment-section-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.05rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.recruitment-card {
+  padding: 2.5rem;
+}
+
+.recruitment-box {
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.recruitment-box:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.recruitment-box h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--primary-color);
+  padding: 0.65rem 1.25rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.03rem;
+}
+
+.recruitment-box dl {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.recruitment-box dt {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  background: var(--light-bg);
+  padding: 0.75rem 1.25rem;
+  border-left: 3px solid var(--primary-color);
+}
+.recruitment-box dd {
+  font-size: 0.9375rem;
+  line-height: 2;
+  color: var(--text-dark);
+  padding: 0.75rem 1.25rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-left: 0;
+}
+.recruitment-box dd:last-child { border-bottom: none; }
+.recruitment-box p {
+  font-size: 0.9375rem;
+  line-height: 2.2;
+  color: var(--text-dark);
+  margin-bottom: 1.25rem;
+}
+.recruitment-box p:last-child { margin-bottom: 0; }
+
+.recruitment-box > div {
+  font-size: 0.9375rem;
+  line-height: 2.2;
+  color: var(--text-dark);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.recruitment-box > div:last-child { border-bottom: none; }
+
+/* 13-inch (≤ 1280px) */
+@media screen and (max-width: 1280px) {
+  .recruitment-container { padding: 4rem 1.25rem; }
+  .recruitment-card { padding: 2.25rem; }
+}
+
+/* iPad (768px – 1024px) */
+@media screen and (max-width: 1024px) {
+  .recruitment-container { padding: 3.5rem 1.25rem; }
+  .recruitment-card { padding: 2rem; }
+}
+
+/* Mobile (≤ 767px) */
+@media screen and (max-width: 767px) {
+  .recruitment-container { padding: 2.5rem 1.25rem; }
+  .recruitment-section-title { font-size: 1.125rem; }
+  .recruitment-card { padding: 1.25rem; }
+}

@@ -1,0 +1,610 @@
+/* ================================================
+   Aircraft Detail Pages – individual aircraft styles
+   Used by: aircraftspecs/businessjet/gulfstream/G550/index.html
+   Dark mode overrides are in dark-mode.css
+   ================================================ */
+
+/* ── Page sections ── */
+.detail-section {
+    width: 100%;
+    background: #fff;
+    color: var(--text-dark);
+}
+
+.detail-section-inner {
+    width: 100%;
+    max-width: 1440px;
+    padding: 4rem 1.5rem;
+}
+
+
+
+/* ── Runway image ── */
+.detail-runway-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: block;
+    margin: 2rem auto 2rem;
+}
+
+/* ── Summary card secondary text ── */
+.summary-card-note {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
+
+/* ── Info grid spacing (design tab rows 2+) ── */
+.info-grid + .info-grid {
+    margin-top: 2rem;
+}
+
+/* ── Form panels (cost tab inputs) ── */
+.spec-form-panel {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+/* ── Shared form controls ── */
+.spec-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.spec-note {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+/* ── Annual hours input ── */
+#annualHours {
+    padding: 0 1rem;
+    min-height: 40px;
+    border: 1px solid rgba(26, 95, 160, 0.3);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    width: 180px;
+    transition: all 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#annualHours:focus {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(26, 95, 160, 0.55);
+    outline: none;
+}
+
+/* ── Currency controls ── */
+.currency-controls {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+#currencySelect {
+    padding: 0 1rem;
+    min-height: 40px;
+    border: 1px solid rgba(26, 95, 160, 0.3);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#currencySelect:focus {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(26, 95, 160, 0.55);
+    outline: none;
+}
+
+#unitSystemSelect {
+    padding: 0 1rem;
+    min-height: 40px;
+    border: 1px solid rgba(26, 95, 160, 0.3);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    align-self: flex-start;
+    width: fit-content;
+}
+
+#unitSystemSelect:focus {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(26, 95, 160, 0.55);
+    outline: none;
+}
+
+#refreshRate {
+    padding: 0 1rem;
+    min-height: 40px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(26, 95, 160, 0.3);
+    border-radius: 6px;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#refreshRate:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(26, 95, 160, 0.55);
+}
+
+#currencyRate {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+#currencyUpdated {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+}
+
+.currency-rate-row {
+    display: none;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.currency-rate-row:has(#currencyRate:not(:empty)) {
+    display: flex;
+}
+.disclaimer-card {
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    background: var(--light-bg);
+    border: 1px solid var(--border-color);
+}
+
+.disclaimer-card h2 {
+    margin-bottom: 1rem;
+}
+
+.disclaimer-card .disclaimer-content p {
+    color: var(--text-dark);
+}
+/* ── Cost charts section ── */
+.cost-charts-section {
+    margin-top: 3rem;
+}
+
+.cost-charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* ── Chart panel headings & canvases ── */
+.spec-chart-heading {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.spec-chart-canvas {
+    position: relative;
+    height: 400px;
+}
+
+.spec-chart-canvas--wide {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+/* ── Runway chart (extends .spec-chart-panel) ── */
+.runway-chart-panel {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ── Runway unit toggle ── */
+#runwayUnitToggle {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.runway-unit-btn {
+    padding: 0.4rem 0.9rem;
+    border: 2px solid var(--border-color);
+    border-radius: 999px;
+    font-weight: 600;
+    background: white;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.runway-unit-btn--active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* ── Airport search ── */
+.airport-search-wrap {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+#airportSearch {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+}
+
+#airportSuggestions {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-width: 500px;
+    max-height: 300px;
+    overflow-y: auto;
+    background: white;
+    border: 2px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: -8px;
+}
+
+/* ── Range map legend ── */
+.range-legend {
+    margin-bottom: 1rem;
+}
+
+.range-legend-row {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.range-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.range-legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.range-legend-color--blue {
+    background: rgba(54, 162, 235, 0.3);
+    border: 2px solid rgba(54, 162, 235, 0.8);
+}
+
+.range-legend-color--red {
+    background: rgba(255, 99, 132, 0.3);
+    border: 2px solid rgba(255, 99, 132, 0.8);
+}
+
+.range-legend-label {
+    font-size: 0.9rem;
+}
+
+/* ── Range map container ── */
+#rangeMap {
+    height: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+@media (max-width: 1024px) { #rangeMap { height: 450px; } }
+@media (max-width: 767px)  { #rangeMap { height: 320px; } }
+
+/* ── Cost config combined card ── */
+.cost-config-card {
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.cost-config-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.cost-config-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+/* ── Disclaimer section ── */
+.disclaimer-content p {
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.disclaimer-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ── Unit system show/hide ── */
+.unit-imperial { display: none; }
+/* metric is default — .unit-metric needs no rule */
+[data-unit="imperial"] .unit-imperial { display: inline; }
+[data-unit="imperial"] .unit-metric   { display: none; }
+
+.cost-config-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cost-config-label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--text-dark);
+}
+
+.cost-config-item .spec-note {
+    margin-top: 0.5rem;
+}
+
+.fuel-live-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.fuel-live-text {
+    font-size: 0.875rem;
+    color: var(--text-dark);
+}
+
+/* ── Responsive ── */
+
+/* 13-inch (≤ 1280px) */
+@media (max-width: 1280px) {
+    .detail-section-inner { padding: 3.5rem 1.5rem; }
+    .detail-section-title { font-size: 3rem; }
+    .cost-config-grid { grid-template-columns: repeat(3, minmax(180px, 1fr)); }
+}
+
+/* iPad (≤ 1024px) */
+@media (max-width: 1024px) {
+    .detail-section-title { font-size: 2.75rem; }
+    .detail-section-inner { padding: 3rem 1.25rem; }
+    .cost-charts-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Design section image gallery rows ── */
+.design-image-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    align-items: stretch;
+    min-height: 380px;
+}
+
+.design-interior-photo {
+    flex: 0 0 calc(33.333% - 0.5rem);
+    min-height: 380px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--light-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.design-interior-photo:hover {
+    transform: translateX(-5px) translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.design-interior-photo img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    display: block;
+}
+
+.design-layout-panel {
+    flex: 1;
+    position: relative;
+    min-height: 380px;
+    background: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.design-layout-panel:hover {
+    transform: translateX(-5px) translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ── Exterior row ── */
+.design-exterior-row {
+    display: flex;
+    gap: 1.5rem;
+    align-items: stretch;
+    min-height: 340px;
+}
+
+.design-exterior-specs {
+    flex: 0 0 calc(50% - 0.75rem);
+    align-self: stretch;
+}
+
+.design-image-cycler {
+    flex: 1;
+    position: relative;
+    min-height: 340px;
+    background: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.design-image-cycler:hover {
+    transform: translateX(-5px) translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ── Shared cycler internals ── */
+.design-cycler-images {
+    position: absolute;
+    inset: 0;
+}
+
+.design-cycler-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 1.5rem 4rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.design-cycler-img--active {
+    opacity: 1;
+}
+
+.design-cycler-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 1;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    backdrop-filter: blur(4px);
+}
+
+.design-cycler-btn:hover {
+    background: #fff;
+    border-color: rgba(0, 0, 0, 0.3);
+    transform: translateY(calc(-50% - 2px));
+}
+
+.design-cycler-btn--prev { left: 0.75rem; }
+.design-cycler-btn--next { right: 0.75rem; }
+
+.design-cycler-dots {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 2;
+}
+
+.design-cycler-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.design-cycler-dot--active {
+    background: var(--accent-color);
+    transform: scale(1.3);
+}
+
+/* Mobile (≤ 767px) */
+@media (max-width: 767px) {
+    .design-interior-photo:hover,
+    .design-layout-panel:hover,
+    .design-image-cycler:hover {
+        transform: none;
+    }
+    .detail-section-title { font-size: 2rem; margin-bottom: 2rem; }
+    .detail-section-inner { padding: 2.5rem 1.25rem; }
+    .runway-chart-panel { max-width: 100%; }
+    .cost-config-grid { grid-template-columns: 1fr; }
+    .currency-controls { flex-wrap: wrap; }
+}
+
+/* Tablet portrait — design gallery stacks */
+@media (max-width: 1024px) {
+    .design-image-row,
+    .design-exterior-row {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .design-interior-photo {
+        flex: 0 0 auto;
+        height: 240px;
+    }
+
+    .design-layout-panel,
+    .design-image-cycler {
+        min-height: 280px;
+    }
+
+    .design-exterior-specs {
+        flex: 0 0 auto;
+    }
+}

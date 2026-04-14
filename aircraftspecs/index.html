@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Aircraft Specs</title>
+    <link rel="icon" href="/assets/general/Bookmark-Icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/aircraftspecs.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <script>!function(){var t=localStorage.getItem('aerolab-theme');if(t){document.documentElement.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='dark'?'#0d0e1a':'#000000')}}();</script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="site-nav"></div>
+
+    <div class="general-title" style="background-image: url(/assets/aircraftspecs/Main-Page-Background.png);">
+        <div class="general-title-inner">
+            <div class="general-title-box">
+                <p class="general-title-english">Aircraft Specs</p>
+                <div class="general-title-icon">
+                    <img src="/assets/aircraftspecs/Main-Page-Icon-White.png" alt="">
+                </div>
+                <h1 class="general-title-title">仕様データベース</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="general-heading">
+        <div class="general-heading-inner">
+            <p>世界をリードする製造業者の航空機の詳細仕様、性能データ、技術情報をご覧ください</p>
+        </div>
+    </div>
+
+    <section class="specs-search-section">
+        <div class="specs-search-inner global-inner">
+            <h2 class="specs-section-title global-title">航空機検索</h2>
+            <div class="specs-search-card global-card">
+                <p class="specs-search-desc">お探しの航空機が決まっていますか？以下に入力して直接ページに移動してください</p>
+                <div class="search-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="航空機を検索...">
+                    <button class="search-button" id="searchButton">
+                        <span>🔍</span>
+                    </button>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="aircraft-types" class="aircraft-types-section">
+        <div class="specs-section-inner global-inner">
+            <h2 class="specs-section-title global-title">航空機タイプ別に閲覧</h2>
+            <p class="section-subtitle">航空機タイプを選択して仕様と性能データをご覧ください</p>
+            
+            <div class="aircraft-types-grid">
+                <a href="/aircraftspecs/businessjet/" class="aircraft-type-card global-card">
+                    <div class="aircraft-type-icon"><img src="/assets/aircraftspecs/Jet-Icon-Black.png" alt="Business Jet"></div>
+                    <h3>ビジネスジェット</h3>
+                    <p>エグゼクティブ＆プライベート航空</p>
+                </a>
+
+                <div class="aircraft-type-card global-card unavailable">
+                    <div class="aircraft-type-icon"><img src="/assets/aircraftspecs/Turboprop-Icon-Black.png" alt="TurboProp Aircraft"></div>
+                    <h3>ターボプロップ機</h3>
+                    <p>効率的な地域輸送</p>
+                </div>
+
+                <div class="aircraft-type-card global-card unavailable">
+                    <div class="aircraft-type-icon"><img src="/assets/aircraftspecs/Piston-Icon-Black.png" alt="Piston Aircraft"></div>
+                    <h3>ピストン機</h3>
+                    <p>一般航空</p>
+                </div>
+
+                <div class="aircraft-type-card global-card unavailable">
+                    <div class="aircraft-type-icon"><img src="/assets/aircraftspecs/Rotorcraft-Icon-Black.png" alt="Rotorcraft"></div>
+                    <h3>回転翼機</h3>
+                    <p>ヘリコプター</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="specs-section-inner global-inner">
+            <h2 class="specs-section-title global-title">提供内容</h2>
+            <div class="features-grid">
+                <div class="aircraft-type-card global-card">
+                    <div class="aircraft-type-icon"><img src="/assets/aircraftspecs/Main-Page-Chart-Icon.png" alt="Interactive Charts"></div>
+                    <h3>インタラクティブチャート</h3>
+                    <p>インタラクティブなグラフと比較で性能データを視覚化</p>
+                </div>
+                <div class="aircraft-type-card global-card">
+                    <div class="aircraft-type-icon"><img src="/assets/aircraftspecs/Main-Page-Specs-Icon.png" alt="Detailed Specifications"></div>
+                    <h3>詳細仕様</h3>
+                    <p>寸法、重量、容量を含む包括的な技術データ</p>
+                </div>
+                <div class="aircraft-type-card global-card">
+                    <div class="aircraft-type-icon"><img src="/assets/aircraftspecs/Main-Page-Metrics-Icon.png" alt="Performance Metrics"></div>
+                    <h3>性能指標</h3>
+                    <p>速度、航続距離、上昇限度、燃料消費データ</p>
+                </div>
+                <div class="aircraft-type-card global-card">
+                    <div class="aircraft-type-icon"><img src="/assets/aircraftspecs/Main-Page-Images-Icon.png" alt="High-Quality Images"></div>
+                    <h3>高品質画像</h3>
+                    <p>各航空機の詳細写真と図表</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="specs-section-inner global-inner">
+            <h2 class="specs-section-title global-title">データベースについて</h2>
+            <div class="specs-about-card global-card">
+                <p>当社の包括的な航空機仕様データベースは、航空愛好家、専門家、研究者向けに正確で最新の情報を提供します。各航空機プロファイルには、詳細な技術仕様、性能データ、インタラクティブな視覚化が含まれており、現代および歴史的な航空機の能力と特性を理解するのに役立ちます。</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.7.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.7.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.8.1/build/player/lottie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="/js/main.js?v=2"></script>
+    <script src="/js/includes.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/english.js"></script>
+    <script src="/js/language.js"></script>
+    <script src="/js/aircraftspecs.js"></script>
+</body>
+</html>

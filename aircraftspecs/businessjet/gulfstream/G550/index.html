@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Gulfstream G550</title>
+    <link rel="icon" href="/assets/general/Bookmark-Icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/aircraftspecs.css">
+    <link rel="stylesheet" href="/css/aircraftdetails.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <script>!function(){var t=localStorage.getItem('aerolab-theme');if(t){document.documentElement.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='dark'?'#0d0e1a':'#000000')}var u=localStorage.getItem('aerolab-unit')||'metric';document.documentElement.setAttribute('data-unit',u);}();</script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="site-nav"></div>
+
+    <div class="general-title" style="background-image: url(/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Background.png);">
+        <div class="general-title-inner">
+            <div class="general-title-box">
+                <p class="general-title-english">Gulfstream G550</p>
+                <div class="general-title-icon">
+                    <img src="/assets/aircraftspecs/Jet-Icon-White.png" alt="">
+                </div>
+                <h1 class="general-title-title">超長距離ビジネスジェット</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="general-heading">
+        <div class="general-heading-inner">
+            <p>ガルフストリームG550超長距離ビジネスジェットの詳細仕様、性能分析、コスト内訳、インタラクティブ航続距離マップです。</p>
+        </div>
+    </div>
+
+    <!-- Summary Section -->
+    <section class="detail-section">
+        <div class="detail-section-inner global-inner">
+            <h2 class="detail-section-title global-title">概要</h2>
+
+            <div class="summary-grid">
+                <div class="summary-card global-card">
+                    <h3>航続距離</h3>
+                    <div class="value">6,750 NM</div>
+                    <p class="summary-card-note"><span class="unit-metric">12,501 KM</span><span class="unit-imperial">7,767 MI</span></p>
+                </div>
+                <div class="summary-card global-card">
+                    <h3>高速巡航時の速度</h3>
+                    <div class="value">MACH 0.85</div>
+                    <p class="summary-card-note">488 KTS / <span class="unit-metric">904 KMH</span><span class="unit-imperial">561 MPH</span></p>
+                </div>
+                <div class="summary-card global-card">
+                    <h3>最大乗客数</h3>
+                    <div class="value">19名</div>
+                    <p class="summary-card-note">標準構成 13-16名</p>
+                </div>
+            </div>
+
+            <div class="summary-description global-card">
+                ガルフストリーム G550は2003年から2021年まで製造され、2名の乗組員を必要とし、最大19名の乗客を輸送できます。最大運用高度は<span class="unit-metric">15,545 M</span><span class="unit-imperial">51,000 FT</span>、高速巡航時の速度はMACH 0.85 (488 KTS / <span class="unit-metric">904 KMH</span><span class="unit-imperial">561 MPH</span>)、最大航続距離は<span class="unit-metric">12,501 KM</span><span class="unit-imperial">7,767 MI</span>（6,750 NM）です。
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Section -->
+    <section class="detail-section">
+        <div class="detail-section-inner global-inner">
+            <h2 class="detail-section-title global-title">コスト分析</h2>
+
+            <div class="cost-config-card global-card">
+                <h3 class="cost-config-title">計算設定</h3>
+                <div class="cost-config-grid">
+                    <div class="cost-config-item">
+                        <label for="annualHours" class="cost-config-label">年間飛行時間</label>
+                        <input
+                            type="number"
+                            id="annualHours"
+                            value="400"
+                            min="1"
+                            max="1000"
+                        >
+                    </div>
+                    <div class="cost-config-item">
+                        <label for="currencySelect" class="cost-config-label">通貨</label>
+                        <div class="currency-controls">
+                            <select id="currencySelect">
+                                <option value="USD" selected>USD - US Dollar</option>
+                                <option value="JPY">JPY - Japanese Yen</option>
+                            </select>
+                            <button id="refreshRate" type="button">
+                                更新
+                            </button>
+                        </div>
+                        <div class="currency-rate-row">
+                            <span id="currencyRate"></span>
+                            <span id="currencyUpdated"></span>
+                        </div>
+                    </div>
+                    <div class="cost-config-item">
+                        <label for="unitSystemSelect" class="cost-config-label">単位</label>
+                        <select id="unitSystemSelect">
+                            <option value="metric">メートル法</option>
+                            <option value="imperial">ヤード・ポンド法</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cost-section">
+                <div class="cost-table global-card">
+                    <h3>年間総コスト概要</h3>
+                    <div class="cost-row">
+                        <span class="cost-label">年間変動費</span>
+                        <span class="cost-value" id="annualVariableCost" data-usd="1755000"></span>
+                    </div>
+                    <div class="cost-row">
+                        <span class="cost-label">年間固定費</span>
+                        <span id="annualFixedCostDisplay" class="cost-value" data-usd="1000000"></span>
+                    </div>
+                    <div class="cost-row total">
+                        <span class="cost-label">年間総予算</span>
+                        <span class="cost-value" id="totalAnnualBudget" data-usd="2540000"></span>
+                    </div>
+                    <div class="cost-row sub-total">
+                        <span class="cost-label">月間総予算</span>
+                        <span class="cost-value" id="totalMonthlyBudget"></span>
+                    </div>
+                    <div class="cost-row sub-total">
+                        <span class="cost-label">時間あたりコスト</span>
+                        <span class="cost-value" id="costPerHour"></span>
+                    </div>
+                </div>
+
+                <div class="cost-table global-card">
+                    <h3>時間変動費</h3>
+                    <div class="cost-row">
+                        <span class="cost-label">燃料</span>
+                        <span id="fuelCostValue" class="cost-value" data-usd="3263"></span>
+                    </div>
+                    <div class="cost-row">
+                        <span class="cost-label">総維持費</span>
+                        <span id="costAirframe" class="cost-value" data-usd="1800"></span>
+                    </div>
+                    <div class="cost-row">
+                        <span class="cost-label">エンジンとAPU維持</span>
+                        <span id="costEngine" class="cost-value" data-usd="1450"></span>
+                    </div>
+                    <div class="cost-row">
+                        <span class="cost-label">その他変動費</span>
+                        <span id="costMisc" class="cost-value" data-usd="600"></span>
+                    </div>
+                    <div class="cost-row total">
+                        <span class="cost-label">時間変動費合計</span>
+                        <span id="hourlyVariableTotal" class="cost-value" data-usd="7113"></span>
+                    </div>
+                </div>
+
+                <div class="cost-table global-card">
+                    <h3>年間固定費明細</h3>
+                    <div class="cost-row">
+                        <span class="cost-label">乗組員給与＆福利厚生</span>
+                        <span id="costCrew" class="cost-value" data-usd="500000"></span>
+                    </div>
+                    <div class="cost-row">
+                        <span class="cost-label">乗組員訓練</span>
+                        <span id="costTraining" class="cost-value" data-usd="100000"></span>
+                    </div>
+                    <div class="cost-row">
+                        <span class="cost-label">格納庫</span>
+                        <span id="costHangar" class="cost-value" data-usd="150000"></span>
+                    </div>
+                    <div class="cost-row">
+                        <span class="cost-label">管理</span>
+                        <span id="costMgmt" class="cost-value" data-usd="100000"></span>
+                    </div>
+                    <div class="cost-row">
+                        <span class="cost-label">保険</span>
+                        <span id="costInsurance" class="cost-value" data-usd="100000"></span>
+                    </div>
+                    <div class="cost-row">
+                        <span class="cost-label">その他固定費</span>
+                        <span id="costFixedMisc" class="cost-value" data-usd="50000"></span>
+                    </div>
+                    <div class="cost-row total">
+                        <span class="cost-label">年間固定費合計</span>
+                        <span id="annualFixedTotal" class="cost-value" data-usd="1000000"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cost Breakdown Charts -->
+            <div class="cost-charts-section">
+                <div class="cost-charts-grid">
+                    <div class="spec-chart-panel global-card">
+                        <h3 class="spec-chart-heading">変動費割当</h3>
+                        <div class="spec-chart-canvas">
+                            <canvas id="variableCostChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="spec-chart-panel global-card">
+                        <h3 class="spec-chart-heading">固定費割当</h3>
+                        <div class="spec-chart-canvas">
+                            <canvas id="fixedCostChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Section -->
+    <section class="detail-section">
+        <div class="detail-section-inner global-inner">
+            <h2 class="detail-section-title global-title">性能</h2>
+
+            <!-- row 1: speed + range -->
+            <div class="info-grid">
+                <div class="info-card global-card">
+                    <h3>速度性能</h3>
+                    <div class="info-item">
+                        <span class="info-item-label">最大速度</span>
+                        <span class="info-item-value">MACH 0.885 / 516 KTS / <span class="unit-imperial">594 MPH</span><span class="unit-metric">956 KMH</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">高速巡航時の速度</span>
+                        <span class="info-item-value">MACH 0.85 / 488 KTS / <span class="unit-imperial">561 MPH</span><span class="unit-metric">904 KMH</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">長距離巡航時の速度</span>
+                        <span class="info-item-value">MACH 0.80 / 459 KTS / <span class="unit-imperial">528 MPH</span><span class="unit-metric">850 KMH</span></span>
+                    </div>
+                </div>
+
+                <div class="info-card global-card">
+                    <h3>航続距離能力</h3>
+                    <div class="info-item">
+                        <span class="info-item-label">航続距離 (MACH 0.8乗員乗客12人)</span>
+                        <span class="info-item-value">6,750 NM / <span class="unit-metric">12,501 KM</span><span class="unit-imperial">7,767 MI</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">フェリー航続距離</span>
+                        <span class="info-item-value">6,776 NM / <span class="unit-metric">12,548 KM</span><span class="unit-imperial">7,798 MI</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">上昇限度</span>
+                        <span class="info-item-value"><span class="unit-imperial">51,000 FT</span><span class="unit-metric">15,545 M</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">初期巡航高度</span>
+                        <span class="info-item-value"><span class="unit-imperial">41,000 FT</span><span class="unit-metric">12,497 M</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- row 2: weight + fuel -->
+            <div class="info-grid">
+                <div class="info-card global-card">
+                    <h3>重量仕様</h3>
+                    <div class="info-item">
+                        <span class="info-item-label">最大離陸重量</span>
+                        <span class="info-item-value"><span class="unit-imperial">91,000 LBS</span><span class="unit-metric">41,277 KG</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">最大着陸重量</span>
+                        <span class="info-item-value"><span class="unit-imperial">75,300 LBS</span><span class="unit-metric">34,156 KG</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">基本運航重量 (乗員4人)</span>
+                        <span class="info-item-value"><span class="unit-imperial">48,300 LBS</span><span class="unit-metric">21,909 KG</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">最大積載量</span>
+                        <span class="info-item-value"><span class="unit-imperial">6,200 LB</span><span class="unit-metric">2,812 KG</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">最大燃料時の積載量</span>
+                        <span class="info-item-value"><span class="unit-imperial">1,800 LB</span><span class="unit-metric">816 KG</span></span>
+                    </div>
+                </div>
+
+                <div class="info-card global-card">
+                    <h3>燃料消費</h3>
+                    <div class="info-item">
+                        <span class="info-item-label">燃料重量</span>
+                        <span class="info-item-value"><span class="unit-imperial">41,300 LBS</span><span class="unit-metric">18,733 KG</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">最大無燃料重量</span>
+                        <span class="info-item-value"><span class="unit-imperial">54,500 LBS</span><span class="unit-metric">24,721 KG</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">時間あたり燃料使用量</span>
+                        <span class="info-item-value"><span class="unit-imperial">358 GAL</span><span class="unit-metric">1,355 L</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">総燃料容量</span>
+                        <span class="info-item-value"><span class="unit-imperial">6,035 GAL</span><span class="unit-metric">22,850 L</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Runway Length -->
+            <img src="/assets/aircraftspecs/Runway.png" alt="Aircraft Runway" class="detail-runway-image">
+
+            <div class="spec-chart-panel global-card runway-chart-panel">
+                <h3 class="spec-chart-heading">滑走距離要件</h3>
+                <div id="runwayUnitToggle">
+                    <button id="runwayUnitMeters" type="button" class="runway-unit-btn runway-unit-btn--active">
+                        メートル
+                    </button>
+                    <button id="runwayUnitFeet" type="button" class="runway-unit-btn">
+                        フィート
+                    </button>
+                </div>
+                <div class="spec-chart-canvas spec-chart-canvas--wide">
+                    <canvas id="runwayChart"></canvas>
+                </div>
+                <div class="disclaimer-card global-card" style="margin-top: 1.5rem;">
+                    <p class="spec-note">滑走路の測定値は、晴天・乾燥した滑走路を基準とした最短値です。距離は乗客の体重、手荷物の重量、風、滑走路の状態、気温、空港の標高によって変わる場合があります。</p>
+                </div>
+            </div>
+
+            <!-- Interactive Range Map -->
+            <div class="spec-chart-panel global-card" style="margin-top: 3rem;">
+                <h3 class="spec-chart-heading">インタラクティブ航続距離マップ</h3>
+                <div class="airport-search-wrap">
+                    <label for="airportSearch" class="spec-label">
+                        出発空港を検索：
+                    </label>
+                    <input 
+                        type="text" 
+                        id="airportSearch" 
+                        placeholder="空港名またはコードで検索（例：東京またはHND）..."
+                        autocomplete="off"
+                        spellcheck="false"
+                        autocorrect="off"
+                        autocapitalize="none"
+                    >
+                    <div id="airportSuggestions"></div>
+                    <p class="spec-note">
+                        空港を検索して選択し、その場所からのG550の航続距離を確認
+                    </p>
+                </div>
+                <div class="range-legend">
+                    <div class="range-legend-row">
+                        <div class="range-legend-item">
+                            <div class="range-legend-color range-legend-color--blue"></div>
+                            <span class="range-legend-label">航続距離 6,750 NM (<span class="unit-metric">12,501 KM</span><span class="unit-imperial">7,767 MI</span>)</span>
+                        </div>
+                        <div class="range-legend-item">
+                            <div class="range-legend-color range-legend-color--red"></div>
+                            <span class="range-legend-label">満席時航続距離(19名) 4,200 NM (<span class="unit-metric">7,778 KM</span><span class="unit-imperial">4,833 MI</span>)</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="rangeMap"></div>
+                <div class="disclaimer-card global-card" style="margin-top: 1.5rem;">
+                    <p class="spec-note">青いレンジリングは、ガルフストリーム社公表の航続距離です。これは乗客8名＋乗員4名、かつ良好な風・気象条件を前提としています。乗客が増えると最大ペイロードを超えるため、追加搭乗には燃料を減らす必要があります。<br>最大の19名搭乗時には、重量に対応するため大幅な燃料削減が必要です。赤いレンジリングはその際の平均的な目安ですが、実際の航続距離は天候や風の影響で増減します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interior Section -->
+    <section class="detail-section">
+        <div class="detail-section-inner global-inner">
+            <h2 class="detail-section-title global-title">内部</h2>
+
+            <!-- row 1: seating + cabin -->
+            <div class="info-grid">
+                <div class="info-card global-card">
+                    <h3>席配置</h3>
+                    <div class="info-item">
+                        <span class="info-item-label">最大乗客数</span>
+                        <span class="info-item-value">19名</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">標準構成</span>
+                        <span class="info-item-value">13-16名</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">最小乗組員</span>
+                        <span class="info-item-value">2名パイロット</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">客室乗務員</span>
+                        <span class="info-item-value">2名（オプション）</span>
+                    </div>
+                </div>
+
+                <div class="info-card global-card">
+                    <h3>キャビン寸法</h3>
+                    <div class="info-item">
+                        <span class="info-item-label">キャビン容積</span>
+                        <span class="info-item-value"><span class="unit-imperial">1,669 FT³</span><span class="unit-metric">47.26 M³</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">キャビン高</span>
+                        <span class="info-item-value"><span class="unit-imperial">6 FT 2 IN</span><span class="unit-metric">1.88 M</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">キャビン幅</span>
+                        <span class="info-item-value"><span class="unit-imperial">7 FT 4 IN</span><span class="unit-metric">2.24 M</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">キャビン長 (荷物室含)</span>
+                        <span class="info-item-value"><span class="unit-imperial">50 FT 1 IN</span><span class="unit-metric">15.27 M</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">荷物室容積</span>
+                        <span class="info-item-value"><span class="unit-imperial">170 FT³</span><span class="unit-metric">4.81 M³</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- row 2: interior photo + layout cycler -->
+            <div class="design-image-row">
+                <div class="design-interior-photo">
+                    <img src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Interior.png" alt="G550 Interior">
+                </div>
+                <div class="design-layout-panel" id="layoutCycler">
+                    <div class="design-cycler-images">
+                        <img class="design-cycler-img design-cycler-img--active" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Layout-1.png" alt="G550 Layout 1">
+                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Layout-2.png" alt="G550 Layout 2">
+                    </div>
+                    <button class="design-cycler-btn design-cycler-btn--prev" id="layoutPrev">&#8249;</button>
+                    <button class="design-cycler-btn design-cycler-btn--next" id="layoutNext">&#8250;</button>
+                    <div class="design-cycler-dots" id="layoutDots">
+                        <span class="design-cycler-dot design-cycler-dot--active"></span>
+                        <span class="design-cycler-dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exterior Section -->
+    <section class="detail-section">
+        <div class="detail-section-inner global-inner">
+            <h2 class="detail-section-title global-title">外部</h2>
+
+            <div class="design-exterior-row">
+                <div class="info-card global-card design-exterior-specs">
+                    <h3>外装寸法</h3>
+                    <div class="info-item">
+                        <span class="info-item-label">全長</span>
+                        <span class="info-item-value"><span class="unit-imperial">96 FT 5 IN</span><span class="unit-metric">29.39 M</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">全幅</span>
+                        <span class="info-item-value"><span class="unit-imperial">93 FT 6 IN</span><span class="unit-metric">28.50 M</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">全高</span>
+                        <span class="info-item-value"><span class="unit-imperial">25 FT 10 IN</span><span class="unit-metric">7.87 M</span></span>
+                    </div>
+                </div>
+                <div class="design-image-cycler" id="exteriorCycler">
+                    <div class="design-cycler-images">
+                        <img class="design-cycler-img design-cycler-img--active" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Side.png" alt="G550 Side View">
+                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Top.png" alt="G550 Top View">
+                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Front.png" alt="G550 Front View">
+                    </div>
+                    <button class="design-cycler-btn design-cycler-btn--prev" id="exteriorPrev">&#8249;</button>
+                    <button class="design-cycler-btn design-cycler-btn--next" id="exteriorNext">&#8250;</button>
+                    <div class="design-cycler-dots" id="exteriorDots">
+                        <span class="design-cycler-dot design-cycler-dot--active"></span>
+                        <span class="design-cycler-dot"></span>
+                        <span class="design-cycler-dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engine & APU Section -->
+    <section class="detail-section">
+        <div class="detail-section-inner global-inner">
+            <h2 class="detail-section-title global-title">エンジン・APU</h2>
+
+            <!-- powerplant + APU -->
+            <div class="info-grid">
+                <div class="info-card global-card">
+                    <h3>パワープラント</h3>
+                    <div class="info-item">
+                        <span class="info-item-label">エンジン</span>
+                        <span class="info-item-value">ロールスロイス製BR710-C4-11</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">離陸推力 (2x)</span>
+                        <span class="info-item-value"><span class="unit-imperial">15,385 LBF</span><span class="unit-metric">68.4 KN</span></span>
+                    </div>
+                </div>
+                <div class="info-card global-card">
+                    <h3>APU</h3>
+                    <div class="info-item">
+                        <span class="info-item-label">モデル</span>
+                        <span class="info-item-value">Honeywell 36-150</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-label">燃料消費</span>
+                        <span class="info-item-value"><span class="unit-imperial">≈ 200 LB/HR</span><span class="unit-metric">91 KG/HR</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer Section -->
+    <section class="detail-section">
+        <div class="detail-section-inner global-inner">
+            <h2 class="detail-section-title global-title">免責事項</h2>
+            <div class="disclaimer-card global-card">
+                <div class="disclaimer-content">
+                    <p>本ページに掲載されている航空機の仕様および性能データ等の情報は、一般的な参考情報として提供されています。これらのデータは、メーカーの公開資料、業界情報、および当社独自の推定に基づいて作成されており、一部には概算値や前提条件が含まれる場合があります。</p>
+                    <p>航続距離、搭載量、速度などの性能数値は、機体の仕様や状態、気象条件、運用環境などのさまざまな要因によって変動するため、実際の数値は掲載内容と異なる場合があります。</p>
+                    <p>本ページに掲載されている画像およびビジュアルは、AI生成または当社により作成されたイメージであり、特定の実機を正確に再現したものではありません。</p>
+                    <p>また、メーカーの更新、規制の変更、市場動向、地政学的要因などにより、掲載情報が最新でない場合があります。当社は、本情報の正確性、完全性、最新性についていかなる保証も行いません。</p>
+                    <p>本情報は「現状有姿」で提供されるものであり、その利用によって生じたいかなる損害についても、当社は一切の責任を負いません。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aircraft Search Section -->
+    <section class="specs-search-section">
+        <div class="specs-search-inner global-inner">
+            <h2 class="specs-section-title global-title">航空機検索</h2>
+            <div class="specs-search-card global-card">
+                <p class="specs-search-desc">お探しの航空機が決まっていますか？以下に入力して直接ページに移動してください</p>
+                <div class="search-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="航空機を検索...">
+                    <button class="search-button" id="searchButton">
+                        <span>🔍</span>
+                    </button>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.7.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.7.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.8.1/build/player/lottie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="/js/main.js?v=2"></script>
+    <script src="/js/includes.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/english.js"></script>
+    <script src="/js/language.js"></script>
+    <script src="/js/aircraftspecs.js"></script>
+    <script src="/js/airports.js"></script>
+    <script src="/js/charts.js"></script>
+    <script src="/js/currency.js"></script>
+    <script src="/js/fuelcost.js"></script>
+    <script>
+        let runwayChart;
+        let costCharts;
+        let syncCurrency;
+        let runwayUnit = 'm';
+        let runwayInitTimer;
+        let runwayInitAttempts = 0;
+
+        // ===========================
+        // COST HELPERS — read source values from DOM, compute and sync all derived cells
+        // ===========================
+        function readCostUsd(id) {
+            var el = document.getElementById(id);
+            return el ? (parseInt(el.dataset.usd, 10) || 0) : 0;
+        }
+
+        function computeNonFuelHourly() {
+            return readCostUsd('costAirframe') + readCostUsd('costEngine') + readCostUsd('costMisc');
+        }
+
+        function computeAnnualFixed() {
+            return readCostUsd('costCrew') + readCostUsd('costTraining') + readCostUsd('costHangar') +
+                   readCostUsd('costMgmt') + readCostUsd('costInsurance') + readCostUsd('costFixedMisc');
+        }
+
+        function syncCostDisplays() {
+            var currencyConfig = typeof getCurrencyConfig === 'function' ? getCurrencyConfig() : null;
+            var rate = currencyConfig ? currencyConfig.rate : 1;
+            var fmt = currencyConfig
+                ? function(n) { return currencyConfig.format(n * rate); }
+                : function(n) { return '$' + Math.round(n).toLocaleString(); };
+
+            var fuelUsd = readCostUsd('fuelCostValue');
+            var hourlyUsd = fuelUsd + computeNonFuelHourly();
+            var fixedUsd  = computeAnnualFixed();
+
+            var hvt = document.getElementById('hourlyVariableTotal');
+            if (hvt) { hvt.dataset.usd = hourlyUsd; hvt.textContent = fmt(hourlyUsd); }
+
+            var aft = document.getElementById('annualFixedTotal');
+            if (aft) { aft.dataset.usd = fixedUsd; aft.textContent = fmt(fixedUsd); }
+
+            var afs = document.getElementById('annualFixedCostDisplay');
+            if (afs) { afs.dataset.usd = fixedUsd; afs.textContent = fmt(fixedUsd); }
+        }
+
+        function refreshCostCharts() {
+            if (!costCharts) { return; }
+            syncCostDisplays();
+
+            function refreshChart(chart) {
+                if (!chart) { return; }
+                if (typeof refreshChartWhenVisible === 'function') {
+                    refreshChartWhenVisible(chart, 8);
+                } else {
+                    chart.resize();
+                    chart.update();
+                }
+            }
+
+            refreshChart(costCharts.variableChart);
+            refreshChart(costCharts.fixedChart);
+
+            requestAnimationFrame(function() {
+                refreshChart(costCharts.variableChart);
+                refreshChart(costCharts.fixedChart);
+            });
+
+            setTimeout(function() {
+                refreshChart(costCharts.variableChart);
+                refreshChart(costCharts.fixedChart);
+            }, 200);
+
+            const needsRetry =
+                (costCharts.variableChart && (costCharts.variableChart.width === 0 || costCharts.variableChart.height === 0)) ||
+                (costCharts.fixedChart && (costCharts.fixedChart.width === 0 || costCharts.fixedChart.height === 0));
+
+            if (needsRetry) {
+                setTimeout(function() {
+                    refreshChart(costCharts.variableChart);
+                    refreshChart(costCharts.fixedChart);
+                }, 450);
+            }
+        }
+
+        function ensureRunwayChart() {
+            const canvas = document.getElementById('runwayChart');
+            if (!canvas) { return runwayChart; }
+            if (!runwayChart && typeof Chart !== 'undefined' && typeof initRunwayChart === 'function') {
+                runwayChart = initRunwayChart(5910, 2770, 4617, runwayUnit);
+            }
+            return runwayChart;
+        }
+
+        function scheduleRunwayChartInit() {
+            if (runwayInitTimer) { return; }
+            runwayInitTimer = setTimeout(function() {
+                runwayInitTimer = null;
+                ensureRunwayChart();
+                refreshRunwayChart();
+                if (runwayChart && (runwayChart.width === 0 || runwayChart.height === 0) && runwayInitAttempts < 20) {
+                    runwayInitAttempts += 1;
+                    scheduleRunwayChartInit();
+                }
+            }, 80);
+        }
+
+        function refreshRunwayChart() {
+            const chart = ensureRunwayChart();
+            if (!chart) { return; }
+
+            if (typeof updateRunwayChartUnit === 'function' && chart.$unit !== runwayUnit) {
+                updateRunwayChartUnit(chart, runwayUnit);
+            }
+            if (typeof refreshChartWhenVisible === 'function') {
+                refreshChartWhenVisible(chart, 8);
+            } else {
+                chart.resize();
+                chart.update('none');
+            }
+
+            setTimeout(function() {
+                if (chart) {
+                    if (typeof updateRunwayChartUnit === 'function' && chart.$unit !== runwayUnit) {
+                        updateRunwayChartUnit(chart, runwayUnit);
+                    }
+                    if (typeof refreshChartWhenVisible === 'function') {
+                        refreshChartWhenVisible(chart, 6);
+                    } else {
+                        chart.resize();
+                        chart.update('none');
+                    }
+                }
+            }, 250);
+
+            setTimeout(function() {
+                if (chart && (chart.width === 0 || chart.height === 0)) {
+                    refreshRunwayChart();
+                }
+            }, 600);
+        }
+
+        function ensureCostCharts() {
+            if (!costCharts && typeof initCostCharts === 'function') {
+                costCharts = initCostCharts(
+                    {
+                        fuel:     readCostUsd('fuelCostValue'),
+                        airframe: readCostUsd('costAirframe'),
+                        engine:   readCostUsd('costEngine'),
+                        misc:     readCostUsd('costMisc')
+                    },
+                    {
+                        crew:       readCostUsd('costCrew'),
+                        training:   readCostUsd('costTraining'),
+                        hangar:     readCostUsd('costHangar'),
+                        insurance:  readCostUsd('costInsurance'),
+                        management: readCostUsd('costMgmt'),
+                        misc:       readCostUsd('costFixedMisc')
+                    }
+                );
+            }
+            if (costCharts) { refreshCostCharts(); }
+            return costCharts;
+        }
+
+        function setRunwayUnit(unit) {
+            runwayUnit = unit === 'ft' ? 'ft' : 'm';
+
+            const metersButton = document.getElementById('runwayUnitMeters');
+            const feetButton = document.getElementById('runwayUnitFeet');
+            if (metersButton && feetButton) {
+                const isMeters = runwayUnit === 'm';
+                metersButton.classList.toggle('runway-unit-btn--active', isMeters);
+                feetButton.classList.toggle('runway-unit-btn--active', !isMeters);
+            }
+
+            const chart = ensureRunwayChart();
+            if (chart && typeof updateRunwayChartUnit === 'function') {
+                updateRunwayChartUnit(chart, runwayUnit);
+            }
+            refreshRunwayChart();
+        }
+
+        function attachRunwayToggleListeners() {
+            const m = document.getElementById('runwayUnitMeters');
+            const f = document.getElementById('runwayUnitFeet');
+            if (m && !m._runwayListenerAttached) {
+                m.addEventListener('click', function() { setRunwayUnit('m'); });
+                m._runwayListenerAttached = true;
+            }
+            if (f && !f._runwayListenerAttached) {
+                f.addEventListener('click', function() { setRunwayUnit('ft'); });
+                f._runwayListenerAttached = true;
+            }
+        }
+
+        // ===========================
+        // G550 AIRCRAFT DATA
+        // ===========================
+
+        var _initNonFuelHourly = computeNonFuelHourly();
+        var _initFuelHourly    = readCostUsd('fuelCostValue');
+        var _initAnnualFixed   = computeAnnualFixed();
+        const costCalculator = initCostCalculator(
+            _initNonFuelHourly + _initFuelHourly,
+            _initAnnualFixed,
+            400
+        );
+        syncCostDisplays();
+
+        const updateRangeMap = initRangeMap(
+            35.5494,
+            139.7798,
+            6776,
+            4200,
+            'G550',
+            'Tokyo Haneda Airport (HND)'
+        );
+
+        initAirportSearch('airportSearch', 'airportSuggestions', function(lat, lng, airport) {
+            const label = airport ? airport.name + ' (' + airport.code + ')' : 'Selected Airport';
+            updateRangeMap(lat, lng, label);
+        });
+
+        attachRunwayToggleListeners();
+
+        const annualHoursInput = document.getElementById('annualHours');
+        if (annualHoursInput) {
+            annualHoursInput.addEventListener('input', function() {
+                ensureCostCharts();
+                refreshCostCharts();
+            });
+        }
+
+        setRunwayUnit('m');
+        scheduleRunwayChartInit();
+        ensureCostCharts();
+
+        window.addEventListener('resize', function() {
+            refreshRunwayChart();
+            refreshCostCharts();
+        });
+
+        if (typeof initFuelCost === 'function') {
+            initFuelCost({
+                costCalculator: costCalculator,
+                costCharts: costCharts,
+                fuelRowId: 'fuelCostValue',
+                otherHourly: computeNonFuelHourly()
+            });
+        }
+
+        syncCurrency = initCurrencyControls({
+            updateCostCalculator: function() {
+                costCalculator.update();
+                syncCostDisplays();
+            },
+            costCharts: costCharts,
+            costContainerSelector: '.cost-section'
+        });
+
+        // ===========================
+        // DESIGN IMAGE CYCLERS
+        // ===========================
+        function initDesignCycler(config) {
+            var container = document.getElementById(config.containerId);
+            if (!container) { return; }
+            var imgs = container.querySelectorAll('.design-cycler-img');
+            var dotsContainer = document.getElementById(config.dotsId);
+            var dots = dotsContainer ? dotsContainer.querySelectorAll('.design-cycler-dot') : [];
+            var current = 0;
+
+            function goTo(n) {
+                imgs[current].classList.remove('design-cycler-img--active');
+                if (dots[current]) { dots[current].classList.remove('design-cycler-dot--active'); }
+                current = (n + imgs.length) % imgs.length;
+                imgs[current].classList.add('design-cycler-img--active');
+                if (dots[current]) { dots[current].classList.add('design-cycler-dot--active'); }
+            }
+
+            var prevBtn = document.getElementById(config.prevBtnId);
+            var nextBtn = document.getElementById(config.nextBtnId);
+            if (prevBtn) { prevBtn.addEventListener('click', function() { goTo(current - 1); }); }
+            if (nextBtn) { nextBtn.addEventListener('click', function() { goTo(current + 1); }); }
+            Array.prototype.forEach.call(dots, function(dot, i) {
+                dot.addEventListener('click', function() { goTo(i); });
+            });
+        }
+
+        initDesignCycler({ containerId: 'layoutCycler',   prevBtnId: 'layoutPrev',   nextBtnId: 'layoutNext',   dotsId: 'layoutDots'   });
+        initDesignCycler({ containerId: 'exteriorCycler', prevBtnId: 'exteriorPrev', nextBtnId: 'exteriorNext', dotsId: 'exteriorDots' });
+
+        // ===========================
+        // UNIT SYSTEM TOGGLE (Metric / Imperial)
+        // ===========================
+        function setUnitSystem(system) {
+            document.documentElement.setAttribute('data-unit', system);
+            localStorage.setItem('aerolab-unit', system);
+        }
+
+        (function () {
+            var saved = localStorage.getItem('aerolab-unit') || 'metric';
+            var unitSelect = document.getElementById('unitSystemSelect');
+            if (unitSelect) {
+                unitSelect.value = saved;
+                unitSelect.addEventListener('change', function () {
+                    setUnitSystem(unitSelect.value);
+                });
+            }
+            setUnitSystem(saved);
+        }());
+    </script>
+</body>
+</html>

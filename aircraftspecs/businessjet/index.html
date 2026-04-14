@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Business Jets</title>
+    <link rel="icon" href="/assets/general/Bookmark-Icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/aircraftspecs.css">
+    <link rel="stylesheet" href="/css/aircrafttype.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <script>!function(){var t=localStorage.getItem('aerolab-theme');if(t){document.documentElement.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='dark'?'#0d0e1a':'#000000')}}();</script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="site-nav"></div>
+
+    <div class="general-title" style="background-image: url(/assets/aircraftspecs/Jet-Background.png);">
+        <div class="general-title-inner">
+            <div class="general-title-box">
+                <p class="general-title-english">Business Jets</p>
+                <div class="general-title-icon">
+                    <img src="/assets/aircraftspecs/Jet-Icon-White.png" alt="">
+                </div>
+                <h1 class="general-title-title">エグゼクティブ＆プライベート航空</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="general-heading">
+        <div class="general-heading-inner">
+            <p>ビジネスジェットは、少人数のグループを快適でスタイリッシュに輸送するために設計された航空機です。地域旅行に最適な軽量ジェットから、大陸間飛行が可能な超長距離機まで様々です。ビジネスジェットは、柔軟性、プライバシー、時間の節約、商用航空会社では利用できない小規模空港へのアクセスを提供します。</p>
+        </div>
+    </div>
+
+    <!-- Aircraft Search + Listings Section -->
+    <section class="specs-search-section">
+        <div class="specs-search-inner global-inner">
+            <h2 class="specs-section-title global-title">航空機検索</h2>
+            <div class="specs-search-card global-card">
+                <p class="specs-search-desc">お探しの航空機が決まっていますか？以下に入力して直接ページに移動してください</p>
+                <div class="search-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="航空機を検索...">
+                    <button class="search-button" id="searchButton">
+                        <span>🔍</span>
+                    </button>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+            </div>
+        </div>
+        <div class="global-inner">
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.7.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.7.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.8.1/build/player/lottie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="/js/main.js?v=2"></script>
+    <script src="/js/includes.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/english.js"></script>
+    <script src="/js/language.js"></script>
+    <script src="/js/aircraftspecs.js"></script>
+    <script>
+        function toggleCategory(categoryId) {
+            const content = document.getElementById(categoryId);
+            const button = content.previousElementSibling;
+            const icon = button.querySelector('.toggle-icon');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                icon.classList.add('rotated');
+            } else {
+                content.style.display = 'none';
+                icon.classList.remove('rotated');
+            }
+        }
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const specs = {
+            "HondaJet HA-420": {'\u822a\u7d9a\u8ddd\u96e2': "1,437 NM", '\u6700\u5927\u901f\u5ea6': "420 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59275\u540d"},
+            "HondaJet Elite": {'\u822a\u7d9a\u8ddd\u96e2': "1,455 NM", '\u6700\u5927\u901f\u5ea6': "420 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59275\u540d"},
+            "HondaJet Elite S": {'\u822a\u7d9a\u8ddd\u96e2': "1,520 NM", '\u6700\u5927\u901f\u5ea6': "420 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59275\u540d"},
+            "HondaJet Elite II": {'\u822a\u7d9a\u8ddd\u96e2': "1,600 NM", '\u6700\u5927\u901f\u5ea6': "420 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59275\u540d"},
+            "Cessna Citation Mustang": {'\u822a\u7d9a\u8ddd\u96e2': "1,200 NM", '\u6700\u5927\u901f\u5ea6': "340 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59274\u540d"},
+            "Cessna Citation CJ1 Series": {'\u822a\u7d9a\u8ddd\u96e2': "1,300 NM", '\u6700\u5927\u901f\u5ea6': "360 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59276\u540d"},
+            "Cessna Citation CJ2 Series": {'\u822a\u7d9a\u8ddd\u96e2': "1,500 NM", '\u6700\u5927\u901f\u5ea6': "390 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59276\u540d"},
+            "Cessna Citation CJ3 Series": {'\u822a\u7d9a\u8ddd\u96e2': "2,040 NM", '\u6700\u5927\u901f\u5ea6': "416 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59276\u540d"},
+            "Cessna Citation CJ4 Series": {'\u822a\u7d9a\u8ddd\u96e2': "2,200 NM", '\u6700\u5927\u901f\u5ea6': "451 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59278\u540d"},
+            "Cessna Citation Sovereign": {'\u822a\u7d9a\u8ddd\u96e2': "3,000 NM", '\u6700\u5927\u901f\u5ea6': "460 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59279\u540d"},
+            "Cessna Citation Latitude": {'\u822a\u7d9a\u8ddd\u96e2': "2,700 NM", '\u6700\u5927\u901f\u5ea6': "446 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59279\u540d"},
+            "Cessna Citation X": {'\u822a\u7d9a\u8ddd\u96e2': "3,460 NM", '\u6700\u5927\u901f\u5ea6': "527 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592712\u540d"},
+            "Cessna Citation Longitude": {'\u822a\u7d9a\u8ddd\u96e2': "3,500 NM", '\u6700\u5927\u901f\u5ea6': "483 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592712\u540d"},
+            "Gulfstream G150": {'\u822a\u7d9a\u8ddd\u96e2': "2,950 NM", '\u6700\u5927\u901f\u5ea6': "515 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59278\u540d"},
+            "Gulfstream G200": {'\u822a\u7d9a\u8ddd\u96e2': "3,100 NM", '\u6700\u5927\u901f\u5ea6': "504 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59279\u540d"},
+            "Gulfstream G280": {'\u822a\u7d9a\u8ddd\u96e2': "3,600 NM", '\u6700\u5927\u901f\u5ea6': "543 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592710\u540d"},
+            "Gulfstream G300": {'\u822a\u7d9a\u8ddd\u96e2': "3,600 NM", '\u6700\u5927\u901f\u5ea6': "541 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59279\u540d"},
+            "Gulfstream G350": {'\u822a\u7d9a\u8ddd\u96e2': "4,000 NM", '\u6700\u5927\u901f\u5ea6': "541 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59279\u540d"},
+            "Gulfstream G400": {'\u822a\u7d9a\u8ddd\u96e2': "4,200 NM", '\u6700\u5927\u901f\u5ea6': "541 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592712\u540d"},
+            "Gulfstream G450": {'\u822a\u7d9a\u8ddd\u96e2': "4,350 NM", '\u6700\u5927\u901f\u5ea6': "516 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592714\u540d"},
+            "Gulfstream G500": {'\u822a\u7d9a\u8ddd\u96e2': "5,200 NM", '\u6700\u5927\u901f\u5ea6': "516 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592716\u540d"},
+            "Gulfstream G550": {'\u822a\u7d9a\u8ddd\u96e2': "6,750 NM", '\u6700\u5927\u901f\u5ea6': "516 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592719\u540d"},
+            "Gulfstream G600": {'\u822a\u7d9a\u8ddd\u96e2': "6,500 NM", '\u6700\u5927\u901f\u5ea6': "516 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592719\u540d"},
+            "Gulfstream G650": {'\u822a\u7d9a\u8ddd\u96e2': "7,000 NM", '\u6700\u5927\u901f\u5ea6': "530 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592719\u540d"},
+            "Gulfstream G650ER": {'\u822a\u7d9a\u8ddd\u96e2': "7,500 NM", '\u6700\u5927\u901f\u5ea6': "530 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592719\u540d"}
+        };
+        const container = document.querySelector('.specs-search-section .global-inner:last-of-type');
+        container.innerHTML = '';
+
+        const pagePaths = {
+            "Gulfstream G550": "/aircraftspecs/businessjet/gulfstream/G550/",
+            // add more mappings as new detail pages are created
+        };
+
+        const brands = {
+            "HondaJet": [
+                "HondaJet HA-420",
+                "HondaJet Elite",
+                "HondaJet Elite S",
+                "HondaJet Elite II"
+            ],
+            "Cessna": [
+                "Cessna Citation Mustang",
+                "Cessna Citation CJ1 Series",
+                "Cessna Citation CJ2 Series",
+                "Cessna Citation CJ3 Series",
+                "Cessna Citation CJ4 Series",
+                "Cessna Citation Sovereign",
+                "Cessna Citation Latitude",
+                "Cessna Citation X",
+                "Cessna Citation Longitude"
+            ],
+            "Gulfstream": [
+                "Gulfstream G150",
+                "Gulfstream G200",
+                "Gulfstream G280",
+                "Gulfstream G300",
+                "Gulfstream G350",
+                "Gulfstream G400",
+                "Gulfstream G450",
+                "Gulfstream G500",
+                "Gulfstream G550",
+                "Gulfstream G600",
+                "Gulfstream G650",
+                "Gulfstream G650ER"
+            ]
+        };
+
+        Object.entries(brands).forEach(([brand, models]) => {
+            const section = document.createElement('div');
+            section.className = 'category-section';
+            section.innerHTML = `
+                <button class="category-toggle" onclick="toggleCategory('${brand.toLowerCase()}')">
+                    <span class="toggle-icon">▼</span>
+                    <h2 style="display:inline;margin:0;">${brand}</h2>
+                </button>
+                <div id="${brand.toLowerCase()}" class="category-content" style="display:none;">
+                    <div class="aircraft-grid"></div>
+                </div>
+            `;
+
+            const grid = section.querySelector('.aircraft-grid');
+            models.forEach(name => {
+                const card = pagePaths[name] ? document.createElement('a') : document.createElement('div');
+                if (pagePaths[name]) {
+                    card.href = pagePaths[name];
+                    card.className = 'aircraft-card available';
+                } else {
+                    card.className = 'aircraft-card unavailable';
+                }
+
+                const img = document.createElement('div');
+                img.className = 'aircraft-card-image';
+                if (name === 'Gulfstream G550') {
+                    img.style.backgroundImage = "url('/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Background.png')";
+                    img.style.backgroundSize = 'cover';
+                    img.style.backgroundPosition = 'center';
+                } else {
+                    img.textContent = '✈️';
+                }
+
+                const content = document.createElement('div');
+                content.className = 'aircraft-card-content';
+
+                const h3 = document.createElement('h3');
+                h3.className = 'aircraft-card-name';
+                h3.textContent = name;
+
+                const specsDiv = document.createElement('div');
+                specsDiv.className = 'aircraft-card-specs';
+
+                [['航続距離', 'Range'], ['最大速度', 'Speed'], ['乗客数', 'Pax']].forEach(([jpLabel]) => {
+                    if (!specs[name] || !specs[name][jpLabel]) return;
+                    const spec = document.createElement('div');
+                    spec.className = 'aircraft-card-spec';
+                    spec.innerHTML = `<span class="aircraft-card-spec-label">${jpLabel}</span><span class="aircraft-card-spec-value">${specs[name][jpLabel]}</span>`;
+                    specsDiv.append(spec);
+                });
+
+                content.append(h3, specsDiv);
+                card.append(img, content);
+                grid.append(card);
+            });
+
+            container.appendChild(section);
+        });
+    });
+    </script>
+</body>
+</html>

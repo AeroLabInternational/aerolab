@@ -1,0 +1,210 @@
+/* ================================================
+   Strengths Section
+   ================================================ */
+
+.strengths { width: 100%; background: #fff; }
+.strengths-inner {
+  width: 100%;
+}
+
+.strengths-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.strengths-card {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 2.5rem;
+}
+.strengths-card:nth-child(even) { flex-direction: row-reverse; }
+.strengths-card-imgBox { width: 38%; flex-shrink: 0; border-radius: 4px; overflow: hidden; }
+.strengths-card-img { width: 100%; height: auto; display: block; }
+.strengths-card-textBox { flex: 1; text-align: left; }
+
+.strengths-card-text {
+  text-align: left;
+}
+
+/* 13-inch (≤ 1280px) */
+@media screen and (max-width: 1280px) {
+  .strengths-inner { padding: 4rem 1.5rem; }
+  .strengths-card { gap: 2.5rem; }
+}
+
+/* iPad (768px – 1024px) */
+@media screen and (max-width: 1024px) {
+  .strengths-inner { padding: 3.5rem 1.25rem; }
+  .strengths-card { width: 90%; margin-left: auto; margin-right: auto; gap: 2rem; }
+}
+
+/* Mobile (≤ 767px) */
+@media screen and (max-width: 767px) {
+  .strengths-inner { padding: 2.5rem 1.25rem; }
+  .strengths-card {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  .strengths-card:nth-child(even) { flex-direction: column; }
+  .strengths-card-imgBox { width: 100%; }
+}
+
+/* ================================================
+   Highlights Section
+   ================================================ */
+
+.highlights { width: 100%; background: #fff; }
+.highlights-inner {
+  width: 100%;
+}
+
+.highlights-card {
+  margin-bottom: 1rem;
+  padding: 3rem;
+}
+.highlights-card-inner { display: flex; align-items: center; gap: 3rem; }
+.highlights-card-wrapper { flex: 1; min-width: 0; }
+.highlights-card-year {
+  display: inline-block;
+  font-size: 0.875rem;
+  letter-spacing: 0.08rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 1rem;
+  margin-bottom: 1rem;
+}
+
+
+.highlights-card-img { width: 38%; flex-shrink: 0; height: 280px; overflow: hidden; border-radius: 4px; }
+.highlights-card-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.highlights-imgBox { display: flex; gap: 0.5rem; margin-top: 1.5rem; }
+.highlights-imgBox img { width: calc(33.333% - 0.333rem); height: auto; display: block; border-radius: 4px; }
+
+/* 13-inch (≤ 1280px) */
+@media screen and (max-width: 1280px) {
+  .highlights-inner { padding: 4rem 1.5rem; }
+  .highlights-card { padding: 2.5rem; }
+  .highlights-card-img { height: 240px; }
+}
+
+/* iPad (768px – 1024px) */
+@media screen and (max-width: 1024px) {
+  .highlights-inner { padding: 3.5rem 1.25rem; }
+}
+
+/* Mobile (≤ 767px) */
+@media screen and (max-width: 767px) {
+  .highlights-inner { padding: 2.5rem 1.25rem; }
+  .highlights-card { padding: 1.5rem; }
+  .highlights-card-inner { flex-direction: column; gap: 1.5rem; }
+  .highlights-card-img { width: 100%; }
+  .highlights-imgBox { gap: 0.25rem; }
+}
+
+/* ================================================
+   Aircrafts Sold
+   ================================================ */
+
+.history { background: #fff; }
+.history-inner {
+  width: 100%;
+  border-bottom: none;
+}
+
+.history-wrapper {
+  flex-direction: column;
+  gap: 0;
+  background: #fff;
+  border: 1px solid var(--primary-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.history-wrapper:hover {
+  transform: translateX(-5px) translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+.history-table-header { display: flex; background: var(--primary-color); }
+.history-table-header span {
+  padding: 0.875rem 1.25rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.history-table-header span:first-child {
+  width: 32%;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+.history-table-header span:last-child { flex: 1; }
+.history-card {
+  width: 100% !important;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--light-bg);
+  transition: background 0.2s ease;
+}
+.history-card:last-child { border-bottom: none; }
+.history-card:hover { background: transparent; transform: none; box-shadow: none; }
+.history-card-top {
+  width: 32%;
+  background: transparent !important;
+  border-right: 1px solid var(--primary-color);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+}
+.history-card-title { 
+  color: var(--text-dark); 
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+.history-card-bottom {
+  flex: 1;
+  background: transparent !important;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+}
+.history-card-text { color: var(--text-dark); font-size: 0.875rem; line-height: 1.6; }
+
+/* 13-inch (≤ 1280px) */
+@media screen and (max-width: 1280px) {
+  .history-inner { padding: 4rem 1.5rem; }
+}
+
+/* iPad (768px – 1024px) */
+@media screen and (max-width: 1024px) {
+  .history-inner { padding: 3.5rem 1.25rem; }
+}
+
+/* Mobile (≤ 767px) */
+@media screen and (max-width: 767px) {
+  .history-wrapper:hover { transform: none; }
+  .history-inner { padding: 2.5rem 1.25rem; }
+  .history-table-header span:first-child { width: 40%; }
+  .history-card { flex-direction: column; }
+  .history-card-top {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--primary-color);
+    padding: 0.6rem 1rem;
+    background: #d8eaf8;
+  }
+  .history-card-bottom { padding: 0.6rem 1rem; }
+}
+

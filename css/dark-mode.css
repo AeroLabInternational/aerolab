@@ -1,0 +1,655 @@
+/* ================================================================
+   Dark Mode — Aerolab International
+   Applied when <html data-theme="dark">.
+
+   Standardized rules:
+     • Section backgrounds : rgba(255, 255, 255, 0.03)
+     • Card / panel bg     : rgba(255, 255, 255, 0.08)
+     • Elevated panel bg   : rgba(255, 255, 255, 0.05)
+     • All borders         : rgba(255, 255, 255, 0.08)
+     • All text            : #fff
+     • All bold titles     : #fff + font-weight 700
+     • Solid-dark elements : #0d0e1a  (matches footer)
+     • All interactive hover: rgba(255, 255, 255, 0.12)
+   ================================================================ */
+
+/* ── Design tokens (overrides all var() references site-wide) ── */
+[data-theme="dark"] {
+    --primary-color:   rgba(180, 200, 255, 0.9);
+    --accent-color:    rgba(120, 170, 240, 0.9);
+    --text-dark:       #fff;
+    --text-light:      #fff;
+    --border-color:    rgba(255, 255, 255, 0.08);
+    --light-bg:        rgba(255, 255, 255, 0.05);
+}
+
+/* ── Page background & base text ── */
+[data-theme="dark"] html {
+    color: #fff;
+    background: #0d0e1a;
+}
+[data-theme="dark"] body {
+    background: linear-gradient(135deg, #2d2f4e 0%, #0d0e1a 100%) fixed;
+    color: #fff;
+}
+
+/* ── Footer ── */
+[data-theme="dark"] footer {
+    background-color: #0d0e1a;
+}
+
+/* ================================================================
+   SHARED PATTERNS
+   ================================================================ */
+
+/* Section-level backgrounds — all 0.03 */
+[data-theme="dark"] .general-heading,
+[data-theme="dark"] .strengths,
+[data-theme="dark"] .highlights,
+[data-theme="dark"] .history,
+[data-theme="dark"] .profile,
+[data-theme="dark"] .message,
+[data-theme="dark"] .movie,
+[data-theme="dark"] .contact-inquiry,
+[data-theme="dark"] .location,
+[data-theme="dark"] .magazine,
+[data-theme="dark"] .dealer,
+[data-theme="dark"] .ys11,
+[data-theme="dark"] .tech,
+[data-theme="dark"] .maintenance-history,
+[data-theme="dark"] .process,
+[data-theme="dark"] .paint-results,
+[data-theme="dark"] .recruitment-text,
+[data-theme="dark"] .results,
+[data-theme="dark"] .policy-section,
+[data-theme="dark"] .transport,
+[data-theme="dark"] .flight-map,
+[data-theme="dark"] .ir-section,
+[data-theme="dark"] .ir-section.ir-contact,
+[data-theme="dark"] .other-general,
+[data-theme="dark"] .linkbox,
+[data-theme="dark"] .detail-section,
+[data-theme="dark"] .category-section,
+[data-theme="dark"] .category-content,
+[data-theme="dark"] .category-description,
+[data-theme="dark"] .specs-search-section,
+[data-theme="dark"] .aircraft-types-section,
+[data-theme="dark"] .features-section,
+[data-theme="dark"] .about-section,
+[data-theme="dark"] .xj-adobe,
+[data-theme="dark"] .history-card-top,
+[data-theme="dark"] .history-card-bottom {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* All text — white */
+[data-theme="dark"] .general-heading p,
+[data-theme="dark"] .aircraft-card-name,
+[data-theme="dark"] .aircraft-card-spec-label,
+[data-theme="dark"] .aircraft-card-spec-value,
+[data-theme="dark"] .global-card-text,
+[data-theme="dark"] .history-card-text,
+[data-theme="dark"] .highlights-card-year,
+[data-theme="dark"] .profile-row dt,
+[data-theme="dark"] .profile-row dd,
+[data-theme="dark"] .profile-row dd .fc,
+[data-theme="dark"] .message-body-inner,
+[data-theme="dark"] .message-body-inner p,
+[data-theme="dark"] .message-signature .name,
+[data-theme="dark"] .message-text,
+[data-theme="dark"] .contact-inquiry-lead,
+[data-theme="dark"] .contact-inquiry-list li a,
+[data-theme="dark"] .contact-inquiry-list li a:hover,
+[data-theme="dark"] .location-name,
+[data-theme="dark"] .location-row dt,
+[data-theme="dark"] .location-row dd,
+[data-theme="dark"] .location-row dd a,
+[data-theme="dark"] .location-row dd a:hover,
+[data-theme="dark"] .magazine-inner,
+[data-theme="dark"] .magazine-card-number,
+[data-theme="dark"] .magazine-card-number-pozi,
+[data-theme="dark"] .magazine-pdf-info,
+[data-theme="dark"] .dealer-inner,
+[data-theme="dark"] .ys11-inner,
+[data-theme="dark"] .tech-inner,
+[data-theme="dark"] .maintenance-history-card-text,
+[data-theme="dark"] .paint-results-label,
+[data-theme="dark"] .paint-results-half-label,
+[data-theme="dark"] .recruitment-container,
+[data-theme="dark"] .recruitment-section-title,
+[data-theme="dark"] .recruitment-box h3,
+[data-theme="dark"] .recruitment-box dt,
+[data-theme="dark"] .recruitment-box dd,
+[data-theme="dark"] .recruitment-box p,
+[data-theme="dark"] .recruitment-box > div,
+[data-theme="dark"] .results-text,
+[data-theme="dark"] .policy-section-lead,
+[data-theme="dark"] .policy-section-text,
+[data-theme="dark"] .policy-list li,
+[data-theme="dark"] .policy-sign-date,
+[data-theme="dark"] .transport-inner,
+[data-theme="dark"] .ir-section-text,
+[data-theme="dark"] .p-ir-section__text,
+[data-theme="dark"] .xj-adobe-text,
+[data-theme="dark"] .xj-list-label,
+[data-theme="dark"] .xj-category-item a,
+[data-theme="dark"] .other-general-text,
+[data-theme="dark"] .section-subtitle,
+[data-theme="dark"] .specs-search-desc,
+[data-theme="dark"] .specs-about-card p,
+[data-theme="dark"] .search-result-item,
+[data-theme="dark"] .search-result-title,
+[data-theme="dark"] .search-result-type,
+[data-theme="dark"] .search-no-results,
+[data-theme="dark"] .aircraft-type-card,
+[data-theme="dark"] .aircraft-type-card h3,
+[data-theme="dark"] .aircraft-type-card p,
+[data-theme="dark"] .summary-card h3,
+[data-theme="dark"] .summary-card .value,
+[data-theme="dark"] .summary-description,
+[data-theme="dark"] .info-card h3,
+[data-theme="dark"] .info-item-label,
+[data-theme="dark"] .info-item-value,
+[data-theme="dark"] .cost-table h3,
+[data-theme="dark"] .cost-label,
+[data-theme="dark"] .cost-row.total .cost-label,
+[data-theme="dark"] .cost-row.sub-total .cost-label,
+[data-theme="dark"] .cost-value,
+[data-theme="dark"] .cost-row.total .cost-value,
+[data-theme="dark"] .cost-row.sub-total .cost-value,
+[data-theme="dark"] .cost-config-label,
+[data-theme="dark"] .range-legend-label,
+[data-theme="dark"] .disclaimer-card h2,
+[data-theme="dark"] .detail-section-title.disclaimer-title,
+[data-theme="dark"] .disclaimer-card .disclaimer-content p,
+[data-theme="dark"] .linkbox-card,
+[data-theme="dark"] .linkbox-card-text,
+[data-theme="dark"] #currencyRate,
+[data-theme="dark"] #currencyUpdated {
+    color: #fff;
+}
+
+/* All bold titles — white + bold */
+[data-theme="dark"] .global-title,
+[data-theme="dark"] .global-card-title,
+[data-theme="dark"] .history-card-title,
+[data-theme="dark"] .ir-contact-title,
+[data-theme="dark"] .policy-sign-company,
+[data-theme="dark"] .detail-section-title,
+[data-theme="dark"] .specs-section-title,
+[data-theme="dark"] .cost-config-title,
+[data-theme="dark"] .cost-config-label,
+[data-theme="dark"] .summary-card-note,
+[data-theme="dark"] .linkbox-card-title,
+[data-theme="dark"] .policy-section-subtitle,
+[data-theme="dark"] .ir-section-subtitle {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* All borders — uniform 0.08 */
+[data-theme="dark"] .global-inner,
+[data-theme="dark"] .profile-row,
+[data-theme="dark"] .specs-section-inner,
+[data-theme="dark"] .specs-search-inner,
+[data-theme="dark"] .search-result-item,
+[data-theme="dark"] .recruitment-box,
+[data-theme="dark"] .recruitment-box dd,
+[data-theme="dark"] .recruitment-box p,
+[data-theme="dark"] .recruitment-box > div,
+[data-theme="dark"] .detail-section-inner,
+[data-theme="dark"] .info-item,
+[data-theme="dark"] .cost-row,
+[data-theme="dark"] .cost-row.total:not(:last-child) {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .cost-row.total {
+    border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+/* All hover — uniform 0.12 surface lift */
+[data-theme="dark"] .specs-search-card:hover,
+[data-theme="dark"] .specs-about-card:hover,
+[data-theme="dark"] .aircraft-type-card:hover,
+[data-theme="dark"] .cost-config-card:hover,
+[data-theme="dark"] .search-result-item:hover,
+[data-theme="dark"] .paint-results-btn:hover,
+[data-theme="dark"] .design-cycler-btn:hover,
+[data-theme="dark"] .runway-unit-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+[data-theme="dark"] .history-table-header ~ .history-card:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+[data-theme="dark"] .magazine-card-text .link,
+[data-theme="dark"] .magazine-pdf-btn {
+    background: #0d0e1a;
+    color: #fff !important;
+}
+[data-theme="dark"] .magazine-card-text .link:hover,
+[data-theme="dark"] .magazine-pdf-btn:hover,
+[data-theme="dark"] .location-link:hover,
+[data-theme="dark"] .location-link:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+[data-theme="dark"] .location-link {
+    background: #0d0e1a;
+    color: #fff !important;
+}
+[data-theme="dark"] .xj-list-inner {
+    color: #fff !important;
+}
+[data-theme="dark"] .xj-list-inner:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.12);
+}
+[data-theme="dark"] .summary-description:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+[data-theme="dark"] .search-button:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+[data-theme="dark"] .search-input:focus {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+[data-theme="dark"] .xj-select-year select:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+[data-theme="dark"] .xj-category-item-all.active a,
+[data-theme="dark"] .xj-category-item-all a:hover,
+[data-theme="dark"] .xj-category-item-results.active a,
+[data-theme="dark"] .xj-category-item-results a:hover,
+[data-theme="dark"] .xj-category-item-timely.active a,
+[data-theme="dark"] .xj-category-item-timely a:hover,
+[data-theme="dark"] .xj-category-item-report.active a,
+[data-theme="dark"] .xj-category-item-report a:hover,
+[data-theme="dark"] .xj-category-item-ir.active a,
+[data-theme="dark"] .xj-category-item-ir a:hover,
+[data-theme="dark"] .xj-category-item-info.active a,
+[data-theme="dark"] .xj-category-item-info a:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+[data-theme="dark"] .runway-unit-btn--active {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+/* Invert filters for light images/icons */
+[data-theme="dark"] .aircraft-type-icon img,
+[data-theme="dark"] .linkbox-card-img img,
+[data-theme="dark"] .linkbox-card::after {
+    filter: invert(1);
+}
+
+/* ================================================================
+   GENERAL SECTIONS (general.css)
+   ================================================================ */
+
+[data-theme="dark"] .aircraft-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow:
+        6px 6px 0 0 rgba(0, 0, 0, 0.25),
+        12px 12px 0 0 rgba(0, 0, 0, 0.18),
+        18px 18px 0 0 rgba(0, 0, 0, 0.10);
+}
+[data-theme="dark"] .aircraft-card-image {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+}
+[data-theme="dark"] .global-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ================================================================
+   SALES PAGE (sales.css)
+   ================================================================ */
+
+[data-theme="dark"] .highlights-card-year {
+    background: #0d0e1a;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .history-wrapper {
+    background: rgba(13, 14, 26, 0.8);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .history-table-header {
+    background: #0d0e1a;
+}
+[data-theme="dark"] .history-table-header span {
+    border-right-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .history-table-header ~ .history-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .history-table-header ~ .history-card:nth-child(even) {
+    background: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .history-card-top {
+    border-right-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ================================================================
+   COMPANY PAGE (company.css)
+   ================================================================ */
+
+[data-theme="dark"] .message-text {
+    border-left-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ================================================================
+   CONTACT PAGE (contact.css)
+   ================================================================ */
+
+[data-theme="dark"] .contact-inquiry-card-header--en,
+[data-theme="dark"] .contact-inquiry-card-header--sales,
+[data-theme="dark"] .contact-inquiry-card-header--mro,
+[data-theme="dark"] .contact-inquiry-card-header--pilot,
+[data-theme="dark"] .contact-inquiry-card-header--shop {
+    background: #0d0e1a;
+}
+[data-theme="dark"] .contact-inquiry-card-body {
+    background: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .location-map iframe {
+    filter: invert(90%) hue-rotate(180deg);
+}
+
+/* ================================================================
+   ACHIEVEMENTS PAGE (achievements.css)
+   ================================================================ */
+
+[data-theme="dark"] .dealer-card-imgBox {
+    background: #fff;
+}
+
+/* ================================================================
+   MAINTENANCE PAGE (maintenance.css)
+   ================================================================ */
+
+[data-theme="dark"] .maintenance-history-card-top {
+    background: #0d0e1a;
+}
+[data-theme="dark"] .maintenance-history-card-bottom {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* ================================================================
+   PAINT PAGE (paint.css)
+   ================================================================ */
+
+[data-theme="dark"] .process-card-titleBox,
+[data-theme="dark"] .results-card-title {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .paint-section-divider,
+[data-theme="dark"] .paint-results-center-divider {
+    background: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .paint-results-half-label {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .paint-results-footer,
+[data-theme="dark"] .policy-sign {
+    border-top-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .paint-results-dot {
+    background: rgba(255, 255, 255, 0.2);
+}
+[data-theme="dark"] .paint-results-dot.active {
+    background: rgba(93, 158, 232, 0.9);
+}
+[data-theme="dark"] .paint-results-btn {
+    background: #0d0e1a;
+}
+
+/* ================================================================
+   RECRUITMENT PAGE (recruitment.css)
+   ================================================================ */
+
+[data-theme="dark"] .recruitment-section-title {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .recruitment-box h3,
+[data-theme="dark"] .recruitment-box dt {
+    background: rgba(255, 255, 255, 0.08);
+    border-left-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ================================================================
+   SECURITY POLICY PAGE (security-policy.css)
+   ================================================================ */
+
+[data-theme="dark"] .policy-section-subtitle,
+[data-theme="dark"] .ir-section-subtitle {
+    border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ================================================================
+   TRANSPORT PAGE (transport.css)
+   ================================================================ */
+
+[data-theme="dark"] .flight-map-text {
+    color: #fff !important;
+}
+
+/* ================================================================
+   INVESTMENT PAGE (investment.css)
+   ================================================================ */
+
+[data-theme="dark"] .ir-section .movie {
+    background: #0d0e1a;
+}
+[data-theme="dark"] .xj-select-year select {
+    background-color: rgba(255, 255, 255, 0.08);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ffffff' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+[data-theme="dark"] .xj-category-item a {
+    background: #0d0e1a;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .xj-list {
+    border-top-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .xj-list li,
+[data-theme="dark"] .xj-list-item {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .xj-list-label {
+    background: #0d0e1a;
+}
+[data-theme="dark"] .xj-adobe {
+    background: #0d0e1a;
+    border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ================================================================
+   AIRCRAFT SPECS PAGES (aircraftspecs.css + aircraftdetails.css)
+   ================================================================ */
+
+/* Business jet page (inline <style> classes need !important) */
+[data-theme="dark"] .aircraft-type-overview {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+[data-theme="dark"] .aircraft-type-overview h2 {
+    color: #fff !important;
+    font-weight: 700 !important;
+}
+[data-theme="dark"] .aircraft-type-overview p,
+[data-theme="dark"] .category-description {
+    color: #fff !important;
+}
+[data-theme="dark"] .category-section {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+[data-theme="dark"] .category-content,
+[data-theme="dark"] .category-description {
+    background: rgba(255, 255, 255, 0.03) !important;
+}
+[data-theme="dark"] .category-description {
+    border-left-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* G550 + aircraft detail pages */
+[data-theme="dark"] .summary-description {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-left-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .summary-card {
+    background: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .info-card,
+[data-theme="dark"] .cost-table,
+[data-theme="dark"] .cost-config-card,
+[data-theme="dark"] .disclaimer-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .info-card h3,
+[data-theme="dark"] .cost-table h3,
+[data-theme="dark"] .cost-config-title {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .spec-panel {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+[data-theme="dark"] .spec-chart-panel {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+[data-theme="dark"] .spec-form-panel {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Inputs & selects */
+[data-theme="dark"] .spec-panel input,
+[data-theme="dark"] .spec-panel select,
+[data-theme="dark"] #annualHours,
+[data-theme="dark"] #currencySelect,
+[data-theme="dark"] #unitSystemSelect,
+[data-theme="dark"] #refreshRate,
+[data-theme="dark"] #airportSearch {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+[data-theme="dark"] .spec-panel label,
+[data-theme="dark"] .spec-panel p,
+[data-theme="dark"] .spec-label,
+[data-theme="dark"] .spec-note,
+[data-theme="dark"] .spec-chart-heading {
+    color: #fff !important;
+}
+
+/* Runway unit buttons */
+[data-theme="dark"] .runway-unit-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Airport suggestions dropdown */
+[data-theme="dark"] #airportSuggestions {
+    background: #0d0e1a;
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+/* Aircraft specs search */
+[data-theme="dark"] .specs-search-card,
+[data-theme="dark"] .specs-about-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow:
+        6px 6px 0 0 rgba(0, 0, 0, 0.18),
+        12px 12px 0 0 rgba(0, 0, 0, 0.12),
+        18px 18px 0 0 rgba(0, 0, 0, 0.06);
+}
+[data-theme="dark"] .search-input {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    color: #fff;
+}
+[data-theme="dark"] .search-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+[data-theme="dark"] .search-button {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    color: #fff;
+}
+[data-theme="dark"] .search-results {
+    background: #0d0e1a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+    color: #fff;
+}
+[data-theme="dark"] .search-result-item,
+[data-theme="dark"] .search-result-title,
+[data-theme="dark"] .search-result-type,
+[data-theme="dark"] .search-no-results,
+[data-theme="dark"] .section-subtitle,
+[data-theme="dark"] .aircraft-type-card,
+[data-theme="dark"] .aircraft-type-card h3,
+[data-theme="dark"] .aircraft-type-card p,
+[data-theme="dark"] .specs-about-card p,
+[data-theme="dark"] .summary-card h3,
+[data-theme="dark"] .summary-description,
+[data-theme="dark"] .info-card h3,
+[data-theme="dark"] .info-item-label,
+[data-theme="dark"] .info-item-value,
+[data-theme="dark"] .cost-label,
+[data-theme="dark"] .cost-value,
+[data-theme="dark"] .cost-row.total .cost-label,
+[data-theme="dark"] .cost-row.total .cost-value {
+    color: #fff !important;
+}
+[data-theme="dark"] .aircraft-type-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .info-card:hover,
+[data-theme="dark"] .cost-table:hover,
+[data-theme="dark"] .specs-about-card:hover,
+[data-theme="dark"] .summary-card:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Design image panels */
+[data-theme="dark"] .design-interior-photo,
+[data-theme="dark"] .design-layout-panel,
+[data-theme="dark"] .design-image-cycler {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .design-cycler-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+[data-theme="dark"] .design-cycler-dot {
+    background: rgba(255, 255, 255, 0.2);
+}
+[data-theme="dark"] .design-cycler-dot--active {
+    background: rgba(93, 158, 232, 0.9);
+}
+
+/* ================================================================
+   LINKBOX COMPONENT (linkbox.css)
+   ================================================================ */
+
+[data-theme="dark"] .linkbox-card {
+    border-top-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .linkbox-card:last-child {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}

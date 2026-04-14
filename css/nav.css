@@ -1,0 +1,316 @@
+header {
+  position: fixed;
+  width: 100%;
+  max-width: 100vw;
+	height:120px;
+  background: rgba(0,0,0,0);
+  z-index: 10000;
+  -webkit-transition: all 0.3s 0s ease;
+  transition: all 0.3s 0s ease;
+}
+header.scroll {
+  background: rgba(0,0,0,0.4);
+}
+
+header .header-logo {
+  display: block;
+  width: 200px;
+  margin: 20px 0 0 20px;
+}
+
+@media (max-width: 1280px) {
+  header {
+    height: 110px;
+  }
+  header .header-logo {
+    width: 180px;
+  }
+}
+@media (max-width: 1024px) {
+  header {
+    height: 105px;
+  }
+}
+@media (max-width: 767px) {
+  header {
+    height: 100px;
+  }
+  header .header-logo {
+    display: block;
+    width: 36%;
+    margin: 30px 0 0 20px;
+  }
+}
+
+/* ── Hamburger button ── */
+header .nav-screen {
+  position: absolute;
+  width: 68px;
+  height: 50px;
+  top: 25px;
+  right: 20px;
+  z-index: 10;
+}
+
+/* ── Language selector ── */
+header .nav-lang {
+  position: absolute;
+  top: 25px;
+  right: 108px;
+  height: 30px; /* center = 25+15 = 40px, matches visual mid of hamburger bars */
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+header .nav-lang-select {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.78rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  opacity: 0.85;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: opacity 0.2s, background 0.2s;
+}
+header .nav-lang-select:hover,
+header .nav-lang-select:focus {
+  opacity: 1;
+  outline: none;
+}
+header .nav-lang-select option {
+  background: var(--color-surface);
+  color: #fff;
+}
+
+/* ── Theme toggle button ── */
+header .nav-theme-toggle {
+  position: absolute;
+  top: 25px;
+  right: 210px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  color: #fff;
+  opacity: 0.85;
+  padding: 0;
+  transition: opacity 0.2s, background 0.2s;
+}
+header .nav-theme-toggle:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.22);
+}
+/* Sun icon: visible by default (light mode) */
+header .nav-theme-toggle .theme-icon--sun  { display: block; }
+header .nav-theme-toggle .theme-icon--moon { display: none; }
+/* Dark mode: show moon, hide sun */
+header .nav-theme-toggle.is-dark .theme-icon--sun  { display: none; }
+header .nav-theme-toggle.is-dark .theme-icon--moon { display: block; }
+
+@media (max-width: 767px) {
+  header .nav-lang {
+    right: 86px;
+    top: 30px;
+    height: 20px; /* center = 30+10 = 40px, matches mobile hamburger */
+  }
+  header .nav-theme-toggle {
+    right: 174px;
+    top: 30px;
+    height: 20px;
+    width: 24px;
+  }
+  header .nav-theme-toggle .theme-icon--sun,
+  header .nav-theme-toggle .theme-icon--moon {
+    width: 14px;
+    height: 14px;
+  }
+}
+@media (max-width: 480px) {
+  header .nav-lang {
+    right: 72px;
+  }
+  header .nav-theme-toggle {
+    right: 158px;
+  }
+}
+@media (max-width: 767px) {
+  header .nav-screen {
+    width: 6%;
+    top: 30px;
+  }
+}
+@media (max-width: 480px) {
+  header .nav-screen {
+    width: 12%;
+  }
+}
+
+/* Three bars */
+header .nav-screen span,
+header .nav-screen:before,
+header .nav-screen:after {
+  content: "";
+  width: 68px;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+}
+header .nav-screen span {
+  top: 0;
+}
+header .nav-screen:before {
+  top: 15px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+header .nav-screen:after {
+  top: 30px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media (max-width: 767px) {
+  header .nav-screen span,
+  header .nav-screen:before,
+  header .nav-screen:after {
+    width: 100%;
+  }
+}
+
+/* Active (X) state */
+header .nav-screen.active span {
+  display: none;
+}
+header .nav-screen.active:before {
+  -webkit-transform: rotate(25deg);
+          transform: rotate(25deg);
+  top: 15px;
+}
+header .nav-screen.active:after {
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+  top: 15px;
+}
+
+/* ── Full-screen nav overlay ── */
+header .nav-menu {
+  background: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
+  height: 100vh;
+  padding: 5% 0 3%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: none;
+  overflow-y: auto;
+}
+@media (max-width: 767px) {
+  header .nav-menu {
+    padding: 15% 0 5%;
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  header .nav-menu {
+    padding: 5% 0;
+  }
+}
+
+/* Inner wrapper */
+header .nav-menu .nav-inner {
+  width: 80%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+@media (max-width: 1280px) {
+  header .nav-menu .nav-inner {
+    width: 90%;
+    padding-bottom: 10%;
+  }
+}
+
+/* Logo inside menu */
+header .nav-menu .nav-inner .nav-text {
+  width: 25.28%;
+  margin: 0 auto;
+}
+@media (max-width: 1280px) {
+  header .nav-menu .nav-inner .nav-text {
+    width: 29.28%;
+  }
+}
+@media (max-width: 767px) {
+  header .nav-menu .nav-inner .nav-text {
+    width: 50.28%;
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  header .nav-menu .nav-inner .nav-text {
+    width: 22%;
+  }
+}
+
+header .nav-menu img {
+  width: 170px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Navigation list */
+header .nav-menu .nav-inner .nav-list {
+  width: 100%;
+  margin: 2rem 0 0;
+}
+header .nav-menu .nav-inner .nav-list ul {
+  text-align: center;
+}
+
+/* List items */
+header .nav-menu .nav-inner .nav-list ul.nav-list-card li {
+  margin: 0 0 0.45rem;
+}
+header .nav-menu .nav-inner .nav-list ul.nav-list-card li span {
+  font-weight: normal;
+}
+
+/* Section headings (Services, Company) and linked headings (Contact, Pilot Shop) */
+header .nav-menu .nav-inner .nav-list ul.nav-list-card li.nav-header,
+header .nav-menu .nav-inner .nav-list ul.nav-list-card li.nav-header-link {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1rem 0 0.6rem;
+}
+
+@media (orientation: landscape) and (max-width: 767px) {
+  header .nav-menu .nav-inner .nav-list ul.nav-list-card li {
+    width: 30%;
+  }
+}
+
+/* Menu link items */
+header .nav-list-card a h2 {
+  color: rgba(255,255,255,1);
+  font-size: 0.85rem;
+  font-weight: normal;
+  margin: 0;
+}
+header .nav-list-card a:hover {
+  opacity: 70%;
+}
+header .nav-list-card a h2 span {
+  color: #4f4f4f;
+  display: block;
+  font-size: .5rem;
+  margin-top: 4px;
+}

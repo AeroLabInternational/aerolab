@@ -1,0 +1,169 @@
+/* ================================================
+   Profile Section
+   ================================================ */
+
+.profile {
+  background: #fff;
+}
+.profile-inner {
+  width: 100%;
+  max-width: 1440px;
+}
+
+.profile-card {
+  overflow: hidden;
+}
+.profile-list {
+  margin: 0;
+  padding: 0;
+}
+.profile-row {
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.profile-row--last {
+  border-bottom: none;
+}
+.profile-row dt {
+  flex: 0 0 8rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  padding-top: 0.15rem;
+}
+.profile-row dd {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin: 0;
+}
+.profile-row dd .fc {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  margin-top: 0.25rem;
+}
+.profile-row dd ul {
+  padding-left: 1rem;
+  margin: 0;
+}
+.profile-row dd li {
+  list-style: disc;
+}
+/* 13-inch (≤ 1280px) */
+@media screen and (max-width: 1280px) {
+  .profile-row { padding: 1.25rem 1.75rem; }
+}
+/* iPad (≤ 1024px) */
+@media screen and (max-width: 1024px) {
+  .profile-row { padding: 1rem 1.25rem; }
+}
+/* Mobile (≤ 767px) */
+@media screen and (max-width: 767px) {
+  .profile-card:hover { transform: none; }
+  .profile-row { flex-direction: column; gap: 0.25rem; padding: 1rem 1.25rem; }
+  .profile-row dt { flex: none; }
+}
+
+/* ================================================
+   Message Section
+   ================================================ */
+
+
+.message-signature {
+  text-align: right;
+}
+.message-signature .name {
+  display: block;
+  font-size: 1.25rem;
+}
+.message {
+  background: #fff;
+}
+.message-inner {
+  width: 100%;
+  max-width: 1440px;
+}
+.message-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.message-img {
+  width: 160px;
+  max-width: 160px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 4px;
+  align-self: auto;
+}
+.message-img--mobile {
+  display: none;
+}
+.message-body-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 3rem;
+}
+.message-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  font-size: 1rem;
+  line-height: 2;
+  color: var(--text-dark);
+  border-left: 3px solid var(--primary-color);
+  padding-left: 2rem;
+}
+/* 13-inch (≤ 1280px) */
+@media screen and (max-width: 1280px) {
+  .message-body-inner { padding: 2.75rem; }
+}
+/* iPad (≤ 1024px) */
+@media screen and (max-width: 1024px) {
+  .message-body-inner { padding: 2.5rem; gap: 2rem; }
+}
+/* Mobile (≤ 767px) */
+@media screen and (max-width: 767px) {
+  .message-body-inner { flex-direction: column; gap: 1.5rem; padding: 1.75rem; }
+  .message-text { border-left: none; padding-left: 0; border-top: 3px solid var(--primary-color); padding-top: 1.5rem; }
+  .message-img--desktop { display: none; }
+  .message-img--mobile { display: block; width: 100%; max-width: 100%; height: 14rem; object-fit: cover; }
+}
+/* ================================================
+   Movie Section
+   ================================================ */
+
+.movie {
+  background: #fff;
+}
+.movie-inner {
+  width: 100%;
+  max-width: 1440px;
+  border-bottom: none;
+}
+
+.movie-area {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.movie-area iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* iPad (≤ 1024px) — no layout changes needed at this tier */
+/* Mobile (≤ 767px) — iframe fills container without issue */
