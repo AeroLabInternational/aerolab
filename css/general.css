@@ -103,7 +103,7 @@
 
 /* 13-inch (≤ 1280px) */
 @media screen and (max-width: 1280px) {
-  .general-title { height: 90vh; }
+  .general-title { height: 100vh; }
   .general-title-box .general-title-english { font-size: 62px; padding-bottom: 1.75rem; }
   .general-title-box .general-title-icon { width: 4rem; }
   .general-title-box .general-title-title { font-size: 24px; padding-top: 1.75rem; }
@@ -119,10 +119,10 @@
 
 /* Mobile (≤ 767px) */
 @media screen and (max-width: 767px) {
-  .general-title { height: 60vh; }
-  .general-title-box .general-title-english { font-size: 34px !important; padding-bottom: 1rem; }
-  .general-title-box .general-title-icon { width: 2rem; }
-  .general-title-box .general-title-title { font-size: 15px; padding-top: 1rem; }
+  .general-title { height: 100svh; }
+  .general-title-box .general-title-english { font-size: 52px !important; padding-bottom: 1rem; white-space: normal; }
+  .general-title-box .general-title-icon { width: 2.5rem; }
+  .general-title-box .general-title-title { font-size: 22px; padding-top: 1rem; }
 }
 
 /* ================================================
@@ -160,8 +160,8 @@
 
 /* Mobile (≤ 767px) */
 @media screen and (max-width: 767px) {
-  .general-heading-inner { padding: 2.5rem 1.25rem; }
-  .general-heading p { font-size: 1.2rem; line-height: 2; }
+  .general-heading-inner { padding: 2.5rem 1.25rem; min-height: 100svh; display: flex; align-items: center; justify-content: center; }
+  .general-heading p { font-size: 1.25rem; line-height: 2; }
 }
 
 /* ================================================
@@ -236,6 +236,11 @@
   font-size: 0.875rem;
   line-height: 2;
   color: var(--text-dark);
+}
+
+@media screen and (max-width: 767px) {
+  .global-card-title { font-size: 1.1rem; }
+  .global-card-text { font-size: 1rem; line-height: 1.9; }
 }
 
 /* ── Global Section Utilities ── */

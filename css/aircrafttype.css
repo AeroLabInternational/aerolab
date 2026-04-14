@@ -167,11 +167,15 @@
     .aircraft-card-name {
         width: 100%;
         min-width: auto;
+        font-size: 1.1rem;
     }
     .aircraft-card-specs {
         flex-wrap: wrap;
         gap: 0.6rem 1.25rem;
     }
+    .aircraft-card-spec { font-size: 0.975rem; }
+    .aircraft-card-spec-label { font-size: 0.975rem; }
+    .aircraft-card-spec-value { font-size: 0.975rem; }
 }
 
 /* ── Type overview panel ── */
@@ -188,6 +192,16 @@
 .aircraft-type-overview p {
     line-height: 1.8;
     color: var(--text-dark);
+    font-size: 1rem;
+}
+
+@media (max-width: 767px) {
+  .aircraft-type-overview { padding: 1.5rem; }
+  .aircraft-type-overview h2 { font-size: 1.25rem; }
+  .aircraft-type-overview p { font-size: 1rem; line-height: 1.9; }
+  .category-toggle { padding: 1.25rem; font-size: 1rem; }
+  .category-content { padding: 1.25rem; }
+  .category-description { font-size: 1rem; line-height: 1.9; }
 }
 
 /* ── Collapsible brand category sections ── */

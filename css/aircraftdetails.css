@@ -584,6 +584,11 @@
     .runway-chart-panel { max-width: 100%; }
     .cost-config-grid { grid-template-columns: 1fr; }
     .currency-controls { flex-wrap: wrap; }
+    #annualHours { width: 100%; }
+    .disclaimer-card { padding: 1.25rem 1.5rem; }
+    .disclaimer-content p { font-size: 1rem; line-height: 1.9; }
+    .spec-note { font-size: 0.95rem; }
+    .spec-label { font-size: 1rem; }
 }
 
 /* Tablet portrait — design gallery stacks */

@@ -25,6 +25,9 @@
   .magazine-inner { padding: 5rem 1.25rem 4.375rem; }
   .magazine-card { padding: 1.25rem; }
   .magazine-pdf { padding: 0.75rem; }
+  .magazine-card-number { font-size: 0.9rem; }
+  .magazine-card-textBox p,
+  .magazine-card-textBox li { font-size: 1rem; line-height: 1.9; }
 }
 
 .magazine-wrapper {
@@ -181,9 +184,11 @@
   .dealer-inner { padding: 1.5rem 1rem; }
   .dealer-card { flex-direction: column; gap: 0; }
   .dealer-card:nth-child(even) { flex-direction: column; }
-  .dealer-card-imgBox { width: 100%; min-height: 14rem; }
+  .dealer-card-imgBox { width: 100%; min-height: 14rem; order: 2; }
+  .dealer-card-textBox { padding: 1.5rem; order: 1; }
   .dealer-card-img { height: auto; }
-  .dealer-card-textBox { padding: 1.5rem; }
+  .dealer-card-title { font-size: 1.1rem; }
+  .dealer-card-text { font-size: 1rem; line-height: 1.9; }
 }
 
 /* ================================================
@@ -259,11 +264,13 @@
   .ys11-inner { padding: 1.5rem 1rem; }
   .ys11-card { grid-template-columns: 1fr; }
   .ys11-card:nth-child(even) { grid-template-columns: 1fr; }
-  .ys11-card-imgBox { grid-column: 1; grid-row: 1; min-height: 14rem; }
-  .ys11-card-textBox { grid-column: 1; grid-row: 2; }
-  .ys11-card:nth-child(even) .ys11-card-imgBox { grid-column: 1; grid-row: 1; }
-  .ys11-card:nth-child(even) .ys11-card-textBox { grid-column: 1; grid-row: 2; }
+  .ys11-card-imgBox { grid-column: 1; grid-row: 2; min-height: 14rem; }
+  .ys11-card-textBox { grid-column: 1; grid-row: 1; }
+  .ys11-card:nth-child(even) .ys11-card-imgBox { grid-column: 1; grid-row: 2; }
+  .ys11-card:nth-child(even) .ys11-card-textBox { grid-column: 1; grid-row: 1; }
   .ys11-card-textBox { padding: 1.5rem; }
+  .ys11-card-title { font-size: 1.1rem; }
+  .ys11-card-text { font-size: 1rem; line-height: 1.9; }
 }
 .ys11-movie-area {
   position: relative;

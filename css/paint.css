@@ -86,10 +86,12 @@
 /* Mobile (≤ 767px) */
 @media screen and (max-width: 767px) {
   .process-inner { padding: 4.375rem 1.25rem; }
-  .process-card { flex-wrap: wrap; gap: 1.25rem; }
-  .process-card-textBox { padding: 1.25rem 1.25rem 0rem 1.25rem; }
+  .process-card { flex-direction: column; gap: 1.25rem; }
+  .process-card-textBox { padding: 1.25rem 1.25rem 0 1.25rem; width: 100%; order: 1; }
+  .process-card-imgBox { max-width: 100%; width: 100%; order: 2; }
   .process-card-text { padding-top: 0.625rem; }
-  .process-card-imgBox { max-width: 100%; }
+  .process-card-title { font-size: 1.1rem; }
+  .process-card-text { font-size: 1rem; line-height: 1.9; }
 }
 
 /* ================================================

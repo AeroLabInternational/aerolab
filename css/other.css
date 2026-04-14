@@ -125,6 +125,7 @@
 /* Mobile (≤ 767px) */
 @media screen and (max-width: 767px) {
   .other-general-inner { padding: 2.5rem 1.25rem; }
+  .other-general-text { font-size: 1rem; line-height: 1.9; }
   .other-general-imgbox { flex-direction: column; }
   .other-general-img img { height: 14rem; }
   .insurance-wrapper { gap: 1rem; }
@@ -133,6 +134,7 @@
     min-width: 0;
     padding: 1.5rem 0.75rem;
   }
+  .insurance-title { font-size: 1rem; }
   .insurance-icon,
   .insurance-icon02,
   .insurance-icon03,

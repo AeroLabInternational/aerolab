@@ -104,4 +104,8 @@
   .recruitment-container { padding: 2.5rem 1.25rem; }
   .recruitment-section-title { font-size: 1.125rem; }
   .recruitment-card { padding: 1.25rem; }
+  .recruitment-box h3 { font-size: 1rem; }
+  .recruitment-box dt { font-size: 1rem; line-height: 1.9; }
+  .recruitment-box dd { font-size: 1rem; line-height: 1.9; }
+  .recruitment-box p { font-size: 1rem; line-height: 1.9; }
 }

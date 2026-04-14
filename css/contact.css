@@ -235,6 +235,8 @@
   .contact-inquiry-wrapper {
     grid-template-columns: 1fr;
   }
+  .contact-inquiry-card-title { font-size: 1.1rem; }
+  .contact-inquiry-list li a { font-size: 1rem; }
 
   .location-item {
     grid-template-columns: 1fr;
@@ -245,6 +247,8 @@
     padding: 1.5rem;
   }
 
+  .location-name { font-size: 1.1rem; }
+
   .location-map {
     min-height: 14rem;
     aspect-ratio: 4 / 3;
@@ -252,5 +256,7 @@
 
   .location-row {
     grid-template-columns: 5.5rem 1fr;
+    font-size: 1rem;
+    line-height: 1.8;
   }
 }

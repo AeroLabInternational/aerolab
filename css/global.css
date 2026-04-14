@@ -261,7 +261,7 @@ body {
     height: 100%;
     width: 100%;
     background: #000;
-    color: #000;
+    color: var(--text-dark);
     overflow-x: hidden;
     cursor: url('/assets/general/Cursor-Airplane.png') 9 9, auto;
 }

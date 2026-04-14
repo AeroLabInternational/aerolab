@@ -103,10 +103,11 @@
 /* Mobile (≤ 767px) */
 @media screen and (max-width: 767px) {
   .results-inner { padding: 4.375rem 1.25rem; }
-  .results-text { margin-bottom: 3.125rem; }
+  .results-text { margin-bottom: 3.125rem; font-size: 1rem; line-height: 1.9; }
   .results-card { padding: 2.5rem 1.25rem; margin-bottom: 2.5rem; }
   .results-card-title { margin-bottom: 0.625rem; padding-left: 2em; text-indent: -1em; }
-  .results-card-text { margin-bottom: 1.875rem; }
+  .results-card-title span { font-size: 1.1rem; }
+  .results-card-text { margin-bottom: 1.875rem; font-size: 1rem; line-height: 1.9; }
   .results-card-imgBox { flex-wrap: wrap; gap: 0.625rem; }
   .results-card-before { max-width: 100%; }
   .results-card-arrow { transform: rotate(90deg); margin: 0 auto; }
