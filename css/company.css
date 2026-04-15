@@ -138,6 +138,7 @@
   .message-text { border-left: none; padding-left: 0; border-top: 3px solid var(--primary-color); padding-top: 1.5rem; font-size: 1rem; line-height: 1.9; }
   .message-img--desktop { display: none; }
   .message-img--mobile { display: block; width: 100%; max-width: 100%; height: auto; object-fit: contain; }
+  .message-signature .name { font-size: 0.9rem; }
 }
 /* ================================================
    Movie Section

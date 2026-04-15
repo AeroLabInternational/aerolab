@@ -236,6 +236,10 @@ html.fixed {
 @media (max-width: 767px) {
     html {
         font-size: 3.8vw;
+        color: var(--text-dark);
+    }
+    body {
+        color: var(--text-dark);
     }
 }
 

@@ -111,7 +111,7 @@
 }
 .magazine-pdf-info {
   font-size: 0.9375rem;
-  color: #444;
+  color: var(--text-dark);
   min-width: 5rem;
   text-align: center;
 }
@@ -185,9 +185,9 @@
   .dealer-inner { padding: 1.5rem 1rem; }
   .dealer-card { flex-direction: column; gap: 0; }
   .dealer-card:nth-child(even) { flex-direction: column; }
-  .dealer-card-imgBox { width: 100%; height: 14rem; min-height: unset; order: 2; }
+  .dealer-card-imgBox { width: 100%; height: auto; min-height: unset; order: 2; }
   .dealer-card-textBox { padding: 1.5rem; order: 1; }
-  .dealer-card-img { height: auto; }
+  .dealer-card-img { position: relative; width: 100%; height: auto; object-fit: contain; }
   .dealer-card-title { font-size: 1.1rem; }
   .dealer-card-text { font-size: 1rem; line-height: 1.9; }
 }

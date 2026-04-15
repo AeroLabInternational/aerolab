@@ -14,14 +14,14 @@
 }
 .strengths-card {
   display: flex;
-  align-items: center;
-  gap: 3rem;
-  padding: 2.5rem;
+  align-items: flex-start;
+  gap: 2.5rem;
+  overflow: hidden;
 }
 .strengths-card:nth-child(even) { flex-direction: row-reverse; }
-.strengths-card-imgBox { width: 38%; flex-shrink: 0; border-radius: 4px; overflow: hidden; }
-.strengths-card-img { width: 100%; height: auto; display: block; }
-.strengths-card-textBox { flex: 1; text-align: left; }
+.strengths-card-imgBox { width: 40%; flex-shrink: 0; overflow: hidden; }
+.strengths-card-img { width: 100%; height: 18rem; object-fit: cover; object-position: center; display: block; }
+.strengths-card-textBox { flex: 1; padding: 2rem 1.75rem; text-align: left; }
 
 .strengths-card-text {
   text-align: left;
@@ -30,7 +30,7 @@
 /* 13-inch (≤ 1280px) */
 @media screen and (max-width: 1280px) {
   .strengths-inner { padding: 4rem 1.5rem; }
-  .strengths-card { gap: 2.5rem; }
+  .strengths-card-img { height: 16rem; }
 }
 
 /* iPad (768px – 1024px) */
@@ -45,12 +45,12 @@
   .strengths-card {
     flex-direction: column !important;
     width: 100%;
-    gap: 1.25rem;
-    padding: 1.5rem;
+    gap: 0;
   }
   .strengths-card:nth-child(even) { flex-direction: column !important; }
   .strengths-card-imgBox { width: 100%; order: 2; }
-  .strengths-card-textBox { order: 1; }
+  .strengths-card-textBox { order: 1; padding: 1.25rem 1.25rem 1rem; }
+  .strengths-card-img { height: 14rem; }
   .strengths-card-title { font-size: 1.1rem; margin-bottom: 0.5rem; }
   .strengths-card-text { font-size: 1rem; line-height: 1.9; }
 }
@@ -105,13 +105,13 @@
 @media screen and (max-width: 767px) {
   .highlights-inner { padding: 2.5rem 1.25rem; }
   .highlights-card { padding: 1.5rem; }
-  .highlights-card-inner { flex-direction: column; gap: 1.25rem; }
+  .highlights-card-inner { flex-direction: column; gap: 0.75rem; }
   .highlights-card-img { width: 100%; height: auto; }
   .highlights-card-img img { height: auto; }
   .highlights-card-title { font-size: 1.25rem; margin-bottom: 0.5rem; }
   .highlights-card-text { font-size: 1rem; line-height: 1.9; }
   .highlights-card-year { font-size: 0.9rem; }
-  .highlights-imgBox { flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
+  .highlights-imgBox { flex-direction: column; gap: 0.75rem; margin-top: 0; }
   .highlights-imgBox img { width: 100%; height: auto; }
 }
 

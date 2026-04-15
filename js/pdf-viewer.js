@@ -33,6 +33,7 @@ function initPdfViewer(options) {
 
   function renderPage(num) {
     pdfDoc.getPage(num).then(function (page) {
+      var dpr           = window.devicePixelRatio || 1;
       var padding       = parseFloat(getComputedStyle(canvas.parentElement).paddingLeft) * 2;
       var availableWidth = canvas.parentElement.clientWidth - padding;
       var maxHeight     = window.innerHeight * 0.8;
@@ -41,8 +42,11 @@ function initPdfViewer(options) {
       var scaleByHeight = maxHeight / viewport.height;
       var scale         = Math.min(scaleByWidth, scaleByHeight);
       var scaledViewport = page.getViewport({ scale: scale });
-      canvas.width  = scaledViewport.width;
-      canvas.height = scaledViewport.height;
+      canvas.width  = scaledViewport.width  * dpr;
+      canvas.height = scaledViewport.height * dpr;
+      canvas.style.width  = scaledViewport.width  + 'px';
+      canvas.style.height = scaledViewport.height + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       page.render({ canvasContext: ctx, viewport: scaledViewport });
       if (currentSpan) currentSpan.textContent = num;
       updateButtons();
