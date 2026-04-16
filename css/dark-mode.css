@@ -164,6 +164,8 @@
 [data-theme="dark"] .disclaimer-card .disclaimer-content p,
 [data-theme="dark"] .linkbox-card,
 [data-theme="dark"] .linkbox-card-text,
+[data-theme="dark"] .contact-inquiry-card-desc,
+[data-theme="dark"] .flight-map-text,
 [data-theme="dark"] #currencyRate,
 [data-theme="dark"] #currencyUpdated {
     color: #fff;
@@ -188,6 +190,8 @@
 }
 
 /* All borders — uniform 0.08 */
+
+/* border-bottom */
 [data-theme="dark"] .global-inner,
 [data-theme="dark"] .profile-row,
 [data-theme="dark"] .specs-section-inner,
@@ -200,11 +204,33 @@
 [data-theme="dark"] .detail-section-inner,
 [data-theme="dark"] .info-item,
 [data-theme="dark"] .cost-row,
-[data-theme="dark"] .cost-row.total:not(:last-child) {
+[data-theme="dark"] .cost-row.total:not(:last-child),
+[data-theme="dark"] .process-card-titleBox,
+[data-theme="dark"] .results-card-title,
+[data-theme="dark"] .paint-results-half-label,
+[data-theme="dark"] .recruitment-section-title,
+[data-theme="dark"] .xj-list li,
+[data-theme="dark"] .xj-list-item,
+[data-theme="dark"] .info-card h3,
+[data-theme="dark"] .cost-table h3,
+[data-theme="dark"] .cost-config-title {
     border-bottom-color: rgba(255, 255, 255, 0.08);
 }
-[data-theme="dark"] .cost-row.total {
+
+/* border-top */
+[data-theme="dark"] .cost-row.total,
+[data-theme="dark"] .paint-results-footer,
+[data-theme="dark"] .policy-sign,
+[data-theme="dark"] .policy-section-subtitle,
+[data-theme="dark"] .ir-section-subtitle,
+[data-theme="dark"] .xj-list {
     border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+/* border-right */
+[data-theme="dark"] .history-table-header span,
+[data-theme="dark"] .history-card-top {
+    border-right-color: rgba(255, 255, 255, 0.08);
 }
 
 /* All hover — uniform 0.12 surface lift */
@@ -215,7 +241,11 @@
 [data-theme="dark"] .search-result-item:hover,
 [data-theme="dark"] .paint-results-btn:hover,
 [data-theme="dark"] .design-cycler-btn:hover,
-[data-theme="dark"] .runway-unit-btn:hover {
+[data-theme="dark"] .runway-unit-btn:hover,
+[data-theme="dark"] .contact-inquiry-card-btn:hover,
+[data-theme="dark"] .info-card:hover,
+[data-theme="dark"] .cost-table:hover,
+[data-theme="dark"] .summary-card:hover {
     background: rgba(255, 255, 255, 0.12);
 }
 [data-theme="dark"] .history-table-header ~ .history-card:hover {
@@ -319,9 +349,6 @@
 [data-theme="dark"] .history-table-header {
     background: #0d0e1a;
 }
-[data-theme="dark"] .history-table-header span {
-    border-right-color: rgba(255, 255, 255, 0.08);
-}
 [data-theme="dark"] .history-table-header ~ .history-card {
     background: rgba(255, 255, 255, 0.08);
     border-bottom-color: rgba(255, 255, 255, 0.08);
@@ -329,10 +356,6 @@
 [data-theme="dark"] .history-table-header ~ .history-card:nth-child(even) {
     background: rgba(255, 255, 255, 0.08);
 }
-[data-theme="dark"] .history-card-top {
-    border-right-color: rgba(255, 255, 255, 0.08);
-}
-
 /* ================================================================
    COMPANY PAGE (company.css)
    ================================================================ */
@@ -345,15 +368,40 @@
    CONTACT PAGE (contact.css)
    ================================================================ */
 
-[data-theme="dark"] .contact-inquiry-card-header--en,
-[data-theme="dark"] .contact-inquiry-card-header--sales,
-[data-theme="dark"] .contact-inquiry-card-header--mro,
-[data-theme="dark"] .contact-inquiry-card-header--pilot,
-[data-theme="dark"] .contact-inquiry-card-header--shop {
+[data-theme="dark"] .contact-inquiry-card-header {
     background: #0d0e1a;
 }
 [data-theme="dark"] .contact-inquiry-card-body {
     background: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .contact-inquiry-card-btn {
+    background: #0d0e1a;
+    color: #fff !important;
+}
+[data-theme="dark"] #contact-verify-modal {
+    background: #1a1c2e;
+    color: #fff;
+}
+[data-theme="dark"] #verify-title,
+[data-theme="dark"] #verify-desc,
+[data-theme="dark"] #verify-question,
+[data-theme="dark"] #contact-verify-close {
+    color: #fff;
+}
+[data-theme="dark"] #verify-input {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+[data-theme="dark"] #verify-input:focus {
+    border-color: rgba(180, 200, 255, 0.6);
+}
+[data-theme="dark"] #verify-submit {
+    background: #0d0e1a;
+    color: #fff;
+}
+[data-theme="dark"] #verify-submit:hover {
+    background: rgba(255, 255, 255, 0.12);
 }
 [data-theme="dark"] .location-map iframe {
     filter: invert(90%) hue-rotate(180deg);
@@ -382,20 +430,9 @@
    PAINT PAGE (paint.css)
    ================================================================ */
 
-[data-theme="dark"] .process-card-titleBox,
-[data-theme="dark"] .results-card-title {
-    border-bottom-color: rgba(255, 255, 255, 0.08);
-}
 [data-theme="dark"] .paint-section-divider,
 [data-theme="dark"] .paint-results-center-divider {
     background: rgba(255, 255, 255, 0.08);
-}
-[data-theme="dark"] .paint-results-half-label {
-    border-bottom-color: rgba(255, 255, 255, 0.08);
-}
-[data-theme="dark"] .paint-results-footer,
-[data-theme="dark"] .policy-sign {
-    border-top-color: rgba(255, 255, 255, 0.08);
 }
 [data-theme="dark"] .paint-results-dot {
     background: rgba(255, 255, 255, 0.2);
@@ -411,30 +448,10 @@
    RECRUITMENT PAGE (recruitment.css)
    ================================================================ */
 
-[data-theme="dark"] .recruitment-section-title {
-    border-bottom-color: rgba(255, 255, 255, 0.08);
-}
 [data-theme="dark"] .recruitment-box h3,
 [data-theme="dark"] .recruitment-box dt {
     background: rgba(255, 255, 255, 0.08);
     border-left-color: rgba(255, 255, 255, 0.08);
-}
-
-/* ================================================================
-   SECURITY POLICY PAGE (security-policy.css)
-   ================================================================ */
-
-[data-theme="dark"] .policy-section-subtitle,
-[data-theme="dark"] .ir-section-subtitle {
-    border-top-color: rgba(255, 255, 255, 0.08);
-}
-
-/* ================================================================
-   TRANSPORT PAGE (transport.css)
-   ================================================================ */
-
-[data-theme="dark"] .flight-map-text {
-    color: #fff !important;
 }
 
 /* ================================================================
@@ -453,13 +470,6 @@
 [data-theme="dark"] .xj-category-item a {
     background: #0d0e1a;
     border-color: rgba(255, 255, 255, 0.08);
-}
-[data-theme="dark"] .xj-list {
-    border-top-color: rgba(255, 255, 255, 0.08);
-}
-[data-theme="dark"] .xj-list li,
-[data-theme="dark"] .xj-list-item {
-    border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 [data-theme="dark"] .xj-list-label {
     background: #0d0e1a;
@@ -512,11 +522,6 @@
 [data-theme="dark"] .disclaimer-card {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.08);
-}
-[data-theme="dark"] .info-card h3,
-[data-theme="dark"] .cost-table h3,
-[data-theme="dark"] .cost-config-title {
-    border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 [data-theme="dark"] .spec-panel {
     background: rgba(255, 255, 255, 0.05) !important;
@@ -617,13 +622,6 @@
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.08);
 }
-[data-theme="dark"] .info-card:hover,
-[data-theme="dark"] .cost-table:hover,
-[data-theme="dark"] .specs-about-card:hover,
-[data-theme="dark"] .summary-card:hover {
-    background: rgba(255, 255, 255, 0.12) !important;
-}
-
 /* Design image panels */
 [data-theme="dark"] .design-interior-photo,
 [data-theme="dark"] .design-layout-panel,
