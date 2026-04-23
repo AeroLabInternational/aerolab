@@ -192,15 +192,7 @@
 }
 .paint-results-footer-center {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
-}
-.paint-results-label {
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.05rem;
-  color: var(--text-dark);
+  justify-content: center;
 }
 .paint-results-dots {
   display: flex;

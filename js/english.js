@@ -3,6 +3,97 @@
 // Values are the English equivalents shown when the user selects English.
 const englishTranslations = {
 
+    // ── NAV ───────────────────────────────────────────────────────────────
+    '航空機・ヘリコプター販売': 'Aircraft Sales',
+    '航空機整備': 'Maintenance',
+    '輸送・サルベージ': 'Transport & Salvage',
+    '改造': 'Remodeling',
+    '塗装': 'Painting',
+    'その他': 'Other Services',
+    '会社概要': 'Our Company',
+    '業務実績': 'Achievements',
+    'IR情報': 'Investor Relations',
+    '採用情報': 'Recruitment',
+    '情報セキュリティ基本方針': 'Security Policy',
+    'お問い合わせ': 'Contact Us',
+    'エアロラボ韓国': 'Aerolab Korea',
+    'パイロットショップ': 'Pilot Shop',
+    '航空スペック': 'Aircraft Specs',
+
+    // ── LINKBOX / FOOTER ──────────────────────────────────────────────────
+    '航空機販売': 'Aircraft Sales',
+    '改造・内装': 'Remodeling & Interior',
+
+    // ── HOME ──────────────────────────────────────────────────────────────
+    '少年の頃から憧れた空へ': 'Towards the Skies We Have Always Dreamed Of',
+    'エアロラボは、大阪・八尾空港を拠点とする航空関連企業です。航空機の販売・整備・運航を通じ、日本の空の安全と発展を支えています。専門技術者の知見と経験を活かし、機体の状態に応じた最適な対応を実施。高品質なサービスにより、安全性と効率性の両立を追求しております。部品や設備の供給にも対応し、現場のニーズに即した柔軟な支援を展開。法令や基準を遵守しながら、創意工夫により新たな価値を創出いたします。信頼されるパートナーとして、これからも独自の強みを活かし続けていきます。': 'Aerolab is an aviation company based at Yao Airport in Osaka. Through aircraft sales, maintenance, and operations, we support the safety and development of Japan\'s aviation sector. Drawing on the expertise and experience of our specialist technicians, we deliver optimal solutions tailored to each aircraft\'s condition. We pursue both safety and efficiency through high-quality service. We also handle parts and equipment supply, providing flexible on-site support. While complying with all laws and standards, we continue to create new value through innovation. As a trusted partner, we will keep leveraging our unique strengths for years to come.',
+    'エアロラボでは、航空機の販売や整備に加え、関係機関との各種調整や手続きにも対応しております。専門性が求められる案件にも的確に取り組み、運用全体を円滑に進めてまいります。日本最高峰の技術力と経験豊富なスタッフが、それぞれのご要望に応じた最適な解決策をご提案いたします。': 'At Aerolab, in addition to aircraft sales and maintenance, we handle various coordination and procedures with relevant authorities. We address even highly specialized matters with precision, ensuring smooth overall operations. Our world-class technical expertise and experienced staff stand ready to propose the optimal solution for each of your needs.',
+    '当社では、航空機関連事業における各種実績や取り組みを適切に開示するとともに、企業としての透明性向上に努めています。また、今後の成長を見据えた採用活動にも注力し、多様な人材の参画を推進しています。会社概要、業務実績、採用に関する詳細については、各ページよりご確認ください。': 'We are committed to appropriately disclosing our achievements and initiatives in the aviation industry while enhancing transparency as a company. We also focus on recruiting diverse talent to drive future growth. For details on our company profile, track record, and recruitment, please visit each page.',
+    'エアロラボグループ各社のウェブサイトは、下のカードよりご覧いただけます。': 'You can view the websites of each Aerolab Group company via the cards below.',
+
+    // ── SALES ─────────────────────────────────────────────────────────────
+    '強み': 'Our Strengths',
+    '当社スタッフが海外で買い付け': 'Our Staff Sources Aircraft Overseas',
+    '国内外問わずお客様のご要望に応じて様々な国から機体を買い付けることが可能です。ご予算やご希望に応じて独自のネットワークで最高の機体をお探しいたします。さらに、外国で購入した航空機を分解輸送やフェリーフライトをすることも可能です。': 'We are able to source aircraft from various countries both domestically and internationally according to our clients\' requests. Using our unique network, we will find the best aircraft to suit your budget and requirements. We can also arrange disassembly transport or ferry flights for aircraft purchased abroad.',
+    '整備から運行手続きを一貫': 'End-to-End from Maintenance to Registration',
+    '買い付けた機体をプロの目でチェックし安全性等を再度確認します。国内外問わず様々な場所から日本まで輸送できることも当社の強みです。尚、ご購入いただいた機体の各種手続き（耐空証明取得、RVSM航行の許可取得、RNAV航行の許可取得や、修理改造検査（内装の変更、アビオニクスの変更）なども請け負っております。': 'We professionally inspect all sourced aircraft to re-confirm safety standards. Our ability to transport aircraft from locations worldwide to Japan is one of our key strengths. We also handle all paperwork for purchased aircraft, including airworthiness certification, RVSM authorization, RNAV authorization, and repair/modification inspections such as interior and avionics changes.',
+    '販売実績': 'Sales Highlights',
+    '2006年式': '2006 Model',
+    '2009年式': '2009 Model',
+    '2018年式': '2018 Model',
+    'お客様のご要望に基づき、ガルフストリーム G550 の導入をサポートいたしました。機体選定から条件交渉まで対応し、ご要望に適合する機体を確保しております。ご購入に際しては、必要な整備・修繕および各種手続きを確実に実施し、長距離・大陸間の国際フライトに対応可能な万全の状態で機体を引き渡しました。その後は、当社パイロットによりアメリカから日本へのフェリーフライトを安全に実施。現在は整備チームが継続的な機体整備を担当し、導入から運航・整備まで一貫した体制で支援しております。': 'We supported the introduction of the Gulfstream G550 based on the client\'s requirements, handling everything from aircraft selection to contract negotiation. Prior to delivery, all necessary maintenance, repairs, and procedures were carried out, and the aircraft was handed over in full readiness for long-range and intercontinental flights. Our pilots then safely conducted the ferry flight from the United States to Japan. The maintenance team now handles ongoing airframe upkeep, providing end-to-end support from acquisition through operations and maintenance.',
+    'ガルフストリーム G200 の導入において、機体選定から詳細な点検・整備に至るまで一貫して対応し、信頼性の高い機体を確保しております。整備完了後は、当社ネットワークを活用し、アメリカにてブラックとゴールドを基調とした特別塗装を実施。品質と意匠性を両立した外観に仕上げております。なお、本機は日本での登録を行わず、米国籍機として運用することで、国内外を問わず柔軟なフライトが可能な体制を確保しております。導入後も、運航および整備の両面から継続的なサポートを提供しております。': 'For the introduction of the Gulfstream G200, we handled everything from aircraft selection to detailed inspection and maintenance, securing a highly reliable aircraft. After completing maintenance, we leveraged our network to commission a special black-and-gold livery in the United States, achieving a finish that balances quality with aesthetic appeal. The aircraft operates as a US-registered aircraft rather than being registered in Japan, enabling flexible flight operations both domestically and internationally. We continue to provide ongoing support covering both operations and maintenance.',
+    'エアバス H125 ヘリコプターの売買をトータルでサポートいたしました。売却案件に対し、当社ネットワークを活用し、日本国内において本機の価値をご理解いただけるお客様とのマッチングを実現しております。機体の状態および価値を的確に評価した提案によりご成約へとつなげるとともに、耐空検査をはじめとする各種手続きを当社にて一括対応し、円滑かつ信頼性の高い取引を実現いたしました。導入に至るまでの全工程を社内で完結し、迅速かつ確実な対応を実施。導入後も運用・整備を含めた継続的なサポートを提供しております。': 'We provided total support for the sale and purchase of the Airbus H125 helicopter. For the sale, we leveraged our network to match the aircraft with a suitable buyer in Japan who fully understood its value. Our accurate appraisal of the aircraft\'s condition and worth led to a successful transaction, and we handled all related procedures—including airworthiness inspection—in-house, ensuring a smooth and reliable deal. The entire process through to delivery was completed internally with speed and precision. We continue to provide ongoing support including operations and maintenance.',
+    '販売履歴': 'Sales History',
+
+    // ── MAINTENANCE ───────────────────────────────────────────────────────
+    '日本最高峰の技術': "Japan's Finest Technology",
+    '点検': 'Inspection',
+    '整備': 'Maintenance',
+    '修理': 'Repair',
+    '整備履歴': 'Maintenance History',
+    '航空機の安全性と適切な運用を確保するためのプロセスです。点検は、航空機の機体、エンジン、システム、装備などの各部分の状態を評価し、問題や潜在的な故障を発見するために行われます。': 'This is the process of ensuring the safety and proper operation of aircraft. Inspections evaluate the condition of each component—including the airframe, engines, systems, and equipment—to identify problems and potential failures.',
+    '航空機整備士や整備スタッフによって行われます。航空機のメンテナンスマニュアルや運航規程に基づき、定められた手順や基準に従って整備を実施します。': 'Carried out by certified aircraft maintenance engineers and technicians. Maintenance is performed in accordance with established procedures and standards set out in the aircraft maintenance manual and operating regulations.',
+    '機体、エンジン、システム、装備などの各部分の問題を特定し、必要な修復作業や部品の交換を行います。修理作業は安全性と規制要件に厳密に準拠する必要があります。航空機の履歴と安全性の評価に役立ちます。航空機の適切な状態と安全性を確保するために欠かせないもので航空機の修理は資格を持った専門家によって行われます。': 'Problems in the airframe, engines, systems, and equipment are identified, and the necessary restoration work and parts replacement are carried out. Repair work must strictly comply with safety and regulatory requirements. It helps assess the history and safety of the aircraft, and is essential for maintaining proper condition. All aircraft repairs are performed by qualified specialists.',
+
+    // ── TRANSPORT ─────────────────────────────────────────────────────────
+    '輸送サービス': 'Transport Services',
+    '故障した機体を現地で修理': 'On-Site Repairs for Grounded Aircraft',
+    'エアロラボに持ち帰り修理': 'Return to Aerolab for Repair',
+    'フェリーフライト': 'Ferry Flight',
+    '航空機の売買と海外フェリーフライトサポート': 'Aircraft Sales & Overseas Ferry Flight Support',
+    'フェリーフライト例': 'Ferry Flight Example',
+    '現地で機体にトラブルがあってもご安心ください。当社スタッフが現地まで赴き、修理やメンテナンスを行います。万が一、事故や重大な損傷が発生した場合は、機体を適切に評価し、コンテナ輸送による移送や修理にも対応いたします。': 'Rest assured if your aircraft encounters trouble on-site. Our staff will travel to the location to perform repairs and maintenance. In the event of an accident or serious damage, we will properly assess the aircraft and arrange container transport and repair as needed.',
+    '現地で修理が難しい場合は、機体をその場で解体し、安全かつ迅速にエアロラボの格納庫へ輸送いたします。当社格納庫にて熟練スタッフが徹底的な修理と整備を行い、機体を最適な状態に復元いたしますのでご安心ください。': 'If repairs are not feasible on-site, we will disassemble the aircraft and transport it safely and swiftly to Aerolab\'s hangar. Our skilled technicians will carry out thorough repairs and maintenance to restore the aircraft to its optimal condition.',
+    '他社には真似できない価格とスピードでフライトプランを作成し、海外から日本への輸入を実現いたします。ロシアを含む複雑な空域の通過手続きや各国で必要な許可の取得も、当社の専門スタッフが的確に対応します。また、税関手続きなどの煩雑な業務もすべて代行し、お客様の負担を最小限に抑えることをお約束します。エアロラボなら、最適なルートと安心のサービスで確実にお届けします。': 'We create flight plans at unmatched speed and cost, enabling seamless import of aircraft from overseas to Japan. Our specialists handle complex airspace transit procedures including Russia, and secure all necessary permits from foreign authorities. We also manage all customs-related paperwork to minimize the burden on our clients. With Aerolab, your aircraft will be delivered reliably via the optimal route with complete peace of mind.',
+    '航空機を売りたいお客様、または購入したいお客様の機体を海外へフェリーすることも可能です。その際の手続きは、最速かつ最安で行います。': 'We can also ferry aircraft overseas for clients looking to sell or purchase an aircraft. All related procedures are handled in the fastest and most cost-effective manner possible.',
+
+    // ── REMODEL ───────────────────────────────────────────────────────────
+    '改造実績': 'Remodeling Work',
+    'GARMIN社製G600 Systemへの換装': 'Upgrade to Garmin G600 System',
+    '内装の改造(内装の作り変え)': 'Interior Remodeling',
+    '特殊用途向けの改造(スカイダイビング用機体のシャッタードア取付)': 'Special Purpose Modification (Skydiving Shutter Door Installation)',
+    'アビオニクスとしては電子統合計器への換装、無線機/航空管制用自動応答装置の換装などの実績があります。電子計器に換装するとパイロットの状況判断を助け、安全性/効率性も向上します。これらアビオニクスの換装は航空局からの認可を受けるための証明作業が多く、難しく日本での工事例は少ないです。ですが、当社では長年の経験、技術により認可を取得することができます。': 'We have experience in upgrades such as replacing analog instruments with integrated electronic displays and swapping out radio and transponder systems. Switching to electronic instruments enhances pilot situational awareness and improves both safety and efficiency. These avionics upgrades require extensive certification work for Civil Aviation Bureau approval and are rarely performed in Japan. However, our years of experience and technical expertise allow us to successfully obtain the required approvals.',
+    '古くなったBaron 58型の内装の張り替えを実施しました。お客様のイメージに合わせて幅広く対応することができます。もちろん耐火性などの証明も取得し、航空局の認可を得ています。': 'We reupholstered the interior of an aging Baron 58 aircraft. We can accommodate a wide range of design preferences to match each client\'s vision. Naturally, we also obtained the necessary certifications including fire resistance testing, ensuring full Civil Aviation Bureau approval.',
+    'スカイダイビングクラブが所有している機体がダイビングを実施する時の利便性増加のためにシャッタードアを装着し当社が設計、製造をし航空局の認可を得ることができます。': 'We designed and manufactured a shutter door for an aircraft owned by a skydiving club to improve convenience during jump operations. We successfully obtained Civil Aviation Bureau approval for the modification.',
+
+    // ── PAINT ─────────────────────────────────────────────────────────────
+    '塗装工程': 'Painting Process',
+    '塗装結果': 'Paint Results',
+    '塗料の乗り良くしたりやスキンのダメージを判定するために洗浄をします。': 'The aircraft is cleaned to improve paint adhesion and to assess any skin damage.',
+    '決定したデザインを塗装するためにマスキングをします。': 'Masking is applied to prepare for painting the finalized design.',
+    'プライマーを塗り、防錆効果を高め、通常の塗料を塗ります。': 'A primer is applied to enhance corrosion resistance, followed by the topcoat paint.',
+
+    // ── OTHER ─────────────────────────────────────────────────────────────
+    '航空機部品': 'Aircraft Parts',
+    'パイロット派遣・技術支援・訓練サポート': 'Pilot Dispatch, Technical Support & Training',
+    '航空機保険のご案内': 'Aircraft Insurance Guide',
+    'ニカドサービス': 'NiCad Battery Service',
+    '航空機用機器・アクセサリー販売': 'Aircraft Equipment & Accessories',
+    '第三者賠償責任': 'Third-Party Liability',
+    '乗客賠償責任': 'Passenger Liability',
+    '搭乗者傷害保険': 'Passenger Injury Insurance',
+
     // Chart labels
     '燃料': 'Fuel',
     '機体整備': 'Airframe Maintenance',
@@ -205,34 +296,6 @@ const englishTranslations = {
     '総推力': 'Total Thrust',
     'モデル': 'Model',
     '出力': 'Power Output',
-
-    // ── Aerolab Non-Specs Pages (Japanese → English) ────────────────────
-    // Home page
-    '少年の頃から憧れた空へ': 'Towards the Skies We Have Always Dreamed Of',
-    'エアロラボは、日本の八尾空港に位置する航空関連企業です。弊社は航空機のメンテナンス、修理、\n\t\t\t\t\t整備などのサービスを提供しています。エアロラボの専門技術者は航空機の安全性とパフォーマンスを維持するために、\n\t\t\t\t\t高品質な作業を行っています。また、航空機関連の部品や設備の供給も行っており、顧客のニーズに応じたソリューションを提供しています。\n\t\t\t\t\t私たちは航空産業において重要な役割を果たしており、安全で信頼性の高い航空機の維持に貢献しています。': 'Aerolab is an aviation company located at Yao Airport in Japan. We provide services including aircraft maintenance, repair, and inspection. Our expert technicians perform high-quality work to maintain the safety and performance of aircraft. We also supply aircraft-related parts and equipment, offering solutions tailored to our customers\' needs. We play an important role in the aviation industry and contribute to the safe and reliable maintenance of aircraft.',
-    'エアロラボでは航空機の販売や整備をはじめ、通常では調整が難しいとされている航空局との調整も': 'At Aerolab, in addition to aircraft sales and maintenance, we also handle coordination with the Civil Aviation Bureau—',
-    '代行いたします。日本最高峰の技術とスタッフが様々なクライアント様のご要望を解決いたします。': 'which is typically difficult to arrange. Our top-class Japanese technicians and staff resolve the diverse needs of our clients.',
-    '株式会社エアロラボインターナショナル は、大阪府八尾市にある航空機販売、航空機整備会社です。航空技術の研究開発と航空産業の進化を目指して革新的な技術と優れた専門知識を持つチームが、航空産業のニーズに応えるために努力しています。品質と信頼性にも注力し、最先端のソリューションを提供します。': 'Aerolab International Co., Ltd. is an aircraft sales and maintenance company located in Yao City, Osaka Prefecture. A team with innovative technology and outstanding expertise is working to meet the needs of the aviation industry, with the goal of researching, developing, and evolving aviation technology. We also focus on quality and reliability, providing cutting-edge solutions.',
-    'エアロラボグループ各社のウェブサイトは、下のカードよりご覧いただけます。': 'You can view the websites of each Aerolab Group company via the cards below.',
-
-    // Nav items (Japanese text in h2)
-    '航空機・ヘリコプター販売': 'Aircraft Sales',
-    '航空機整備': 'Maintenance',
-    '輸送・サルベージ': 'Transport & Salvage',
-    '改造': 'Remodeling',
-    '塗装': 'Painting',
-    '塗装工程': 'Painting Process',
-    '塗装結果': 'Paint Results',
-    'その他': 'Other Services',
-    '会社概要': 'Our Company',
-    '業務実績': 'Achievements',
-    'IR情報': 'Investor Relations',
-    '採用情報': 'Recruitment',
-    '情報セキュリティ基本方針': 'Security Policy',
-    'お問い合わせ': 'Contact Us',
-    'エアロラボ韓国': 'Aerolab Korea',
-    'パイロットショップ': 'Pilot Shop',
-    '航空スペック': 'Aircraft Specs',
 
     // ── Runway chart X-axis ────────────────────────────────────────────────────
     '距離': 'Distance',

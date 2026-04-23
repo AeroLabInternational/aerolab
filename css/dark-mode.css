@@ -113,7 +113,6 @@
 [data-theme="dark"] .ys11-inner,
 [data-theme="dark"] .tech-inner,
 [data-theme="dark"] .maintenance-history-card-text,
-[data-theme="dark"] .paint-results-label,
 [data-theme="dark"] .paint-results-half-label,
 [data-theme="dark"] .recruitment-container,
 [data-theme="dark"] .recruitment-section-title,
@@ -362,6 +361,10 @@
 
 [data-theme="dark"] .message-text {
     border-left-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .message-img,
+[data-theme="dark"] .message-img--mobile {
+    filter: invert(1);
 }
 
 /* ================================================================

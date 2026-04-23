@@ -33,22 +33,13 @@
   .home-animated-title { font-size: 52px; }
 }
 
-.home-animated-text {
+ .home-animated-text {
   font-family: 'Dancing Script', cursive;
   font-size: 52px;
   color: #fff;
   white-space: nowrap;
   display: inline-block;
   padding: 0 0.15em 0.3em 0;
-  clip-path: inset(0 100% 0 0);
-  animation: draw-section-text 1.5s cubic-bezier(0.37, 0, 0.63, 1) forwards;
-  animation-play-state: paused;
-}
-.home-animated-text.in-view {
-  animation-play-state: running;
-}
-@keyframes draw-section-text {
-  to { clip-path: inset(0 -0.2em 0 0); }
 }
 @media (max-width: 1280px) {
   .home-animated-text { font-size: 44px; }
@@ -59,10 +50,7 @@
 @media (max-width: 767px) {
   .home-animated-text {
     font-size: 36px;
-    clip-path: none !important;
-    animation: none !important;
     white-space: normal;
-    opacity: 1 !important;
   }
 }
 
