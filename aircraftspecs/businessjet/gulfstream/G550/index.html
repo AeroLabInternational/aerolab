@@ -38,7 +38,7 @@
 
     <div class="general-heading">
         <div class="general-heading-inner">
-            <p>ガルフストリームG550超長距離ビジネスジェットの詳細仕様、性能分析、コスト内訳、インタラクティブ航続距離マップです。</p>
+            <p>超長距離ビジネスジェット「ガルフストリームG550」の機体仕様や性能、運航コストの内訳に加え、航続距離マップをご覧いただけます。</p>
         </div>
     </div>
 
@@ -49,24 +49,24 @@
 
             <div class="summary-grid">
                 <div class="summary-card global-card">
-                    <h3>航続距離</h3>
-                    <div class="value">6,750 NM</div>
-                    <p class="summary-card-note"><span class="unit-metric">12,501 KM</span><span class="unit-imperial">7,767 MI</span></p>
+                    <h3>最大航続距離</h3>
+                    <div class="value">6,750海里</div>
+                    <p class="summary-card-note"><span class="unit-metric">12,501 km</span><span class="unit-imperial">7,767 mi</span></p>
                 </div>
                 <div class="summary-card global-card">
                     <h3>高速巡航時の速度</h3>
-                    <div class="value">MACH 0.85</div>
-                    <p class="summary-card-note">488 KTS / <span class="unit-metric">904 KMH</span><span class="unit-imperial">561 MPH</span></p>
+                    <div class="value">マッハ0.85</div>
+                    <p class="summary-card-note">488 kts / <span class="unit-metric">904 km/h</span><span class="unit-imperial">561 mph</span></p>
                 </div>
                 <div class="summary-card global-card">
-                    <h3>最大乗客数</h3>
+                    <h3>最大搭乗人数</h3>
                     <div class="value">19名</div>
                     <p class="summary-card-note">標準構成 13-16名</p>
                 </div>
             </div>
 
             <div class="summary-description global-card">
-                ガルフストリーム G550は2003年から2021年まで製造され、2名の乗組員を必要とし、最大19名の乗客を輸送できます。最大運用高度は<span class="unit-metric">15,545 M</span><span class="unit-imperial">51,000 FT</span>、高速巡航時の速度はMACH 0.85 (488 KTS / <span class="unit-metric">904 KMH</span><span class="unit-imperial">561 MPH</span>)、最大航続距離は<span class="unit-metric">12,501 KM</span><span class="unit-imperial">7,767 MI</span>（6,750 NM）です。
+                ガルフストリーム G550は2003年から2021年にかけて製造された超長距離ビジネスジェットで、2名乗務体制により運航され、最大19名の乗客搭乗が可能です。最大運用高度は<span class="unit-metric">15,545 m</span><span class="unit-imperial">51,000 ft</span>、高速巡航速度はマッハ0.85 (488 kts / <span class="unit-metric">904 km/h</span><span class="unit-imperial">561 mph</span>)、最大航続距離は約<span class="unit-metric">12,501 km</span><span class="unit-imperial">7,767 mi</span>（6,750海里）です。
             </div>
         </div>
     </section>
@@ -77,7 +77,7 @@
             <h2 class="detail-section-title global-title">コスト分析</h2>
 
             <div class="cost-config-card global-card">
-                <h3 class="cost-config-title">計算設定</h3>
+                <h3 class="cost-config-title">条件を設定</h3>
                 <div class="cost-config-grid">
                     <div class="cost-config-item">
                         <label for="annualHours" class="cost-config-label">年間飛行時間</label>
@@ -90,7 +90,7 @@
                         >
                     </div>
                     <div class="cost-config-item">
-                        <label for="currencySelect" class="cost-config-label">通貨</label>
+                        <label for="currencySelect" class="cost-config-label">表示通貨</label>
                         <div class="currency-controls">
                             <select id="currencySelect">
                                 <option value="USD" selected>USD - US Dollar</option>
@@ -106,7 +106,7 @@
                         </div>
                     </div>
                     <div class="cost-config-item">
-                        <label for="unitSystemSelect" class="cost-config-label">単位</label>
+                        <label for="unitSystemSelect" class="cost-config-label">表示単位</label>
                         <select id="unitSystemSelect">
                             <option value="metric">メートル法</option>
                             <option value="imperial">ヤード・ポンド法</option>
@@ -117,25 +117,25 @@
 
             <div class="cost-section">
                 <div class="cost-table global-card">
-                    <h3>年間総コスト概要</h3>
+                    <h3>運航コストの内訳</h3>
                     <div class="cost-row">
-                        <span class="cost-label">年間変動費</span>
+                        <span class="cost-label">年間変動費合計</span>
                         <span class="cost-value" id="annualVariableCost" data-usd="1755000"></span>
                     </div>
                     <div class="cost-row">
-                        <span class="cost-label">年間固定費</span>
+                        <span class="cost-label">年間固定費合計</span>
                         <span id="annualFixedCostDisplay" class="cost-value" data-usd="1000000"></span>
                     </div>
                     <div class="cost-row total">
-                        <span class="cost-label">年間総予算</span>
+                        <span class="cost-label">年間総コスト(固定費＋変動費)</span>
                         <span class="cost-value" id="totalAnnualBudget" data-usd="2540000"></span>
                     </div>
                     <div class="cost-row sub-total">
-                        <span class="cost-label">月間総予算</span>
+                        <span class="cost-label">月間総コスト(固定費＋変動費)</span>
                         <span class="cost-value" id="totalMonthlyBudget"></span>
                     </div>
                     <div class="cost-row sub-total">
-                        <span class="cost-label">時間あたりコスト</span>
+                        <span class="cost-label">時間当たりコスト</span>
                         <span class="cost-value" id="costPerHour"></span>
                     </div>
                 </div>
@@ -143,15 +143,15 @@
                 <div class="cost-table global-card">
                     <h3>時間変動費</h3>
                     <div class="cost-row">
-                        <span class="cost-label">燃料</span>
+                        <span class="cost-label">燃料費</span>
                         <span id="fuelCostValue" class="cost-value" data-usd="3263"></span>
                     </div>
                     <div class="cost-row">
-                        <span class="cost-label">総維持費</span>
+                        <span class="cost-label">整備関連費用</span>
                         <span id="costAirframe" class="cost-value" data-usd="1800"></span>
                     </div>
                     <div class="cost-row">
-                        <span class="cost-label">エンジンとAPU維持</span>
+                        <span class="cost-label">エンジン・APU整備プログラム費</span>
                         <span id="costEngine" class="cost-value" data-usd="1450"></span>
                     </div>
                     <div class="cost-row">
@@ -167,23 +167,23 @@
                 <div class="cost-table global-card">
                     <h3>年間固定費明細</h3>
                     <div class="cost-row">
-                        <span class="cost-label">乗組員給与＆福利厚生</span>
+                        <span class="cost-label">乗員人件費 (給与・福利厚生)</span>
                         <span id="costCrew" class="cost-value" data-usd="500000"></span>
                     </div>
                     <div class="cost-row">
-                        <span class="cost-label">乗組員訓練</span>
+                        <span class="cost-label">乗員訓練費</span>
                         <span id="costTraining" class="cost-value" data-usd="100000"></span>
                     </div>
                     <div class="cost-row">
-                        <span class="cost-label">格納庫</span>
+                        <span class="cost-label">格納庫費</span>
                         <span id="costHangar" class="cost-value" data-usd="150000"></span>
                     </div>
                     <div class="cost-row">
-                        <span class="cost-label">管理</span>
+                        <span class="cost-label">管理費</span>
                         <span id="costMgmt" class="cost-value" data-usd="100000"></span>
                     </div>
                     <div class="cost-row">
-                        <span class="cost-label">保険</span>
+                        <span class="cost-label">航空機保険料</span>
                         <span id="costInsurance" class="cost-value" data-usd="100000"></span>
                     </div>
                     <div class="cost-row">
@@ -201,13 +201,13 @@
             <div class="cost-charts-section">
                 <div class="cost-charts-grid">
                     <div class="spec-chart-panel global-card">
-                        <h3 class="spec-chart-heading">変動費割当</h3>
+                        <h3 class="spec-chart-heading">変動費の構成</h3>
                         <div class="spec-chart-canvas">
                             <canvas id="variableCostChart"></canvas>
                         </div>
                     </div>
                     <div class="spec-chart-panel global-card">
-                        <h3 class="spec-chart-heading">固定費割当</h3>
+                        <h3 class="spec-chart-heading">固定費の構成</h3>
                         <div class="spec-chart-canvas">
                             <canvas id="fixedCostChart"></canvas>
                         </div>
@@ -225,38 +225,38 @@
             <!-- row 1: speed + range -->
             <div class="info-grid">
                 <div class="info-card global-card">
-                    <h3>速度性能</h3>
+                    <h3>飛行速度</h3>
                     <div class="info-item">
                         <span class="info-item-label">最大速度</span>
-                        <span class="info-item-value">MACH 0.885 / 516 KTS / <span class="unit-imperial">594 MPH</span><span class="unit-metric">956 KMH</span></span>
+                        <span class="info-item-value">マッハ0.885 / 516 kts / <span class="unit-imperial">594 mph</span><span class="unit-metric">956 km/h</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">高速巡航時の速度</span>
-                        <span class="info-item-value">MACH 0.85 / 488 KTS / <span class="unit-imperial">561 MPH</span><span class="unit-metric">904 KMH</span></span>
+                        <span class="info-item-value">マッハ0.85 / 488 kts / <span class="unit-imperial">561 mph</span><span class="unit-metric">904 km/h</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">長距離巡航時の速度</span>
-                        <span class="info-item-value">MACH 0.80 / 459 KTS / <span class="unit-imperial">528 MPH</span><span class="unit-metric">850 KMH</span></span>
+                        <span class="info-item-value">マッハ0.80 / 459 kts / <span class="unit-imperial">528 mph</span><span class="unit-metric">850 km/h</span></span>
                     </div>
                 </div>
 
                 <div class="info-card global-card">
-                    <h3>航続距離能力</h3>
+                    <h3>航続距離と飛行高度</h3>
                     <div class="info-item">
-                        <span class="info-item-label">航続距離 (MACH 0.8乗員乗客12人)</span>
-                        <span class="info-item-value">6,750 NM / <span class="unit-metric">12,501 KM</span><span class="unit-imperial">7,767 MI</span></span>
+                        <span class="info-item-label">航続距離 (マッハ0.8、乗員・乗客12名の場合)</span>
+                        <span class="info-item-value">6,750海里  / <span class="unit-metric">12,501 km</span><span class="unit-imperial">7,767 mi</span></span>
                     </div>
                     <div class="info-item">
-                        <span class="info-item-label">フェリー航続距離</span>
-                        <span class="info-item-value">6,776 NM / <span class="unit-metric">12,548 KM</span><span class="unit-imperial">7,798 MI</span></span>
+                        <span class="info-item-label">無給油最大航続距離 (乗客なし)</span>
+                        <span class="info-item-value">6,776海里 / <span class="unit-metric">12,548 km</span><span class="unit-imperial">7,798 mi</span></span>
                     </div>
                     <div class="info-item">
-                        <span class="info-item-label">上昇限度</span>
-                        <span class="info-item-value"><span class="unit-imperial">51,000 FT</span><span class="unit-metric">15,545 M</span></span>
+                        <span class="info-item-label">上昇限界</span>
+                        <span class="info-item-value"><span class="unit-imperial">51,000 ft</span><span class="unit-metric">15,545 m</span></span>
                     </div>
                     <div class="info-item">
-                        <span class="info-item-label">初期巡航高度</span>
-                        <span class="info-item-value"><span class="unit-imperial">41,000 FT</span><span class="unit-metric">12,497 M</span></span>
+                        <span class="info-item-label">巡航開始高度</span>
+                        <span class="info-item-value"><span class="unit-imperial">41,000 ft</span><span class="unit-metric">12,497 m</span></span>
                     </div>
                 </div>
             </div>
@@ -267,23 +267,23 @@
                     <h3>重量仕様</h3>
                     <div class="info-item">
                         <span class="info-item-label">最大離陸重量</span>
-                        <span class="info-item-value"><span class="unit-imperial">91,000 LBS</span><span class="unit-metric">41,277 KG</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">91,000 lbs</span><span class="unit-metric">41,277 kg</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">最大着陸重量</span>
-                        <span class="info-item-value"><span class="unit-imperial">75,300 LBS</span><span class="unit-metric">34,156 KG</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">75,300 lbs</span><span class="unit-metric">34,156 kg</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">基本運航重量 (乗員4人)</span>
-                        <span class="info-item-value"><span class="unit-imperial">48,300 LBS</span><span class="unit-metric">21,909 KG</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">48,300 lbs</span><span class="unit-metric">21,909 kg</span></span>
                     </div>
                     <div class="info-item">
-                        <span class="info-item-label">最大積載量</span>
-                        <span class="info-item-value"><span class="unit-imperial">6,200 LB</span><span class="unit-metric">2,812 KG</span></span>
+                        <span class="info-item-label">最大搭載量</span>
+                        <span class="info-item-value"><span class="unit-imperial">6,200 lb</span><span class="unit-metric">2,812 kg</span></span>
                     </div>
                     <div class="info-item">
-                        <span class="info-item-label">最大燃料時の積載量</span>
-                        <span class="info-item-value"><span class="unit-imperial">1,800 LB</span><span class="unit-metric">816 KG</span></span>
+                        <span class="info-item-label">最大燃料搭載時の有効搭載量</span>
+                        <span class="info-item-value"><span class="unit-imperial">1,800 lb</span><span class="unit-metric">816 kg</span></span>
                     </div>
                 </div>
 
@@ -291,19 +291,19 @@
                     <h3>燃料消費</h3>
                     <div class="info-item">
                         <span class="info-item-label">燃料重量</span>
-                        <span class="info-item-value"><span class="unit-imperial">41,300 LBS</span><span class="unit-metric">18,733 KG</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">41,300 lbs</span><span class="unit-metric">18,733 kg</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">最大無燃料重量</span>
-                        <span class="info-item-value"><span class="unit-imperial">54,500 LBS</span><span class="unit-metric">24,721 KG</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">54,500 lbs</span><span class="unit-metric">24,721 kg</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">時間あたり燃料使用量</span>
-                        <span class="info-item-value"><span class="unit-imperial">358 GAL</span><span class="unit-metric">1,355 L</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">358 gal</span><span class="unit-metric">1,355 L</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">総燃料容量</span>
-                        <span class="info-item-value"><span class="unit-imperial">6,035 GAL</span><span class="unit-metric">22,850 L</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">6,035 gal</span><span class="unit-metric">22,850 L</span></span>
                     </div>
                 </div>
             </div>
@@ -329,7 +329,7 @@
                 </div>
             </div>
 
-            <!-- Interactive Range Map -->
+            <!-- Interactive Range map -->
             <div class="spec-chart-panel global-card" style="margin-top: 3rem;">
                 <h3 class="spec-chart-heading">インタラクティブ航続距離マップ</h3>
                 <div class="airport-search-wrap">
@@ -347,18 +347,18 @@
                     >
                     <div id="airportSuggestions"></div>
                     <p class="spec-note">
-                        空港を検索して選択し、その場所からのG550の航続距離を確認
+                        空港を検索・選択し、その地点からのG550の航続距離を確認できます。
                     </p>
                 </div>
                 <div class="range-legend">
                     <div class="range-legend-row">
                         <div class="range-legend-item">
                             <div class="range-legend-color range-legend-color--blue"></div>
-                            <span class="range-legend-label">航続距離 6,750 NM (<span class="unit-metric">12,501 KM</span><span class="unit-imperial">7,767 MI</span>)</span>
+                            <span class="range-legend-label">航続距離 6,750海里 (<span class="unit-metric">12,501 km</span><span class="unit-imperial">7,767 mi</span>)</span>
                         </div>
                         <div class="range-legend-item">
                             <div class="range-legend-color range-legend-color--red"></div>
-                            <span class="range-legend-label">満席時航続距離(19名) 4,200 NM (<span class="unit-metric">7,778 KM</span><span class="unit-imperial">4,833 MI</span>)</span>
+                            <span class="range-legend-label">満席時航続距離(19名) 4,200海里 (<span class="unit-metric">7,778 km</span><span class="unit-imperial">4,833 mi</span>)</span>
                         </div>
                     </div>
                 </div>
@@ -373,14 +373,14 @@
     <!-- Interior Section -->
     <section class="detail-section">
         <div class="detail-section-inner global-inner">
-            <h2 class="detail-section-title global-title">内部</h2>
+            <h2 class="detail-section-title global-title">キャビン</h2>
 
             <!-- row 1: seating + cabin -->
             <div class="info-grid">
                 <div class="info-card global-card">
                     <h3>席配置</h3>
                     <div class="info-item">
-                        <span class="info-item-label">最大乗客数</span>
+                        <span class="info-item-label">最大搭乗人数</span>
                         <span class="info-item-value">19名</span>
                     </div>
                     <div class="info-item">
@@ -388,36 +388,36 @@
                         <span class="info-item-value">13-16名</span>
                     </div>
                     <div class="info-item">
-                        <span class="info-item-label">最小乗組員</span>
-                        <span class="info-item-value">2名パイロット</span>
+                        <span class="info-item-label">最小乗組員 (パイロット)</span>
+                        <span class="info-item-value">2名</span>
                     </div>
                     <div class="info-item">
-                        <span class="info-item-label">客室乗務員</span>
-                        <span class="info-item-value">2名（オプション）</span>
+                        <span class="info-item-label">客室乗務員 (任意)</span>
+                        <span class="info-item-value">2名</span>
                     </div>
                 </div>
 
                 <div class="info-card global-card">
                     <h3>キャビン寸法</h3>
                     <div class="info-item">
-                        <span class="info-item-label">キャビン容積</span>
-                        <span class="info-item-value"><span class="unit-imperial">1,669 FT³</span><span class="unit-metric">47.26 M³</span></span>
+                        <span class="info-item-label">客室の広さ (容積)</span>
+                        <span class="info-item-value"><span class="unit-imperial">1,669 ft³</span><span class="unit-metric">47.26 m³</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">キャビン高</span>
-                        <span class="info-item-value"><span class="unit-imperial">6 FT 2 IN</span><span class="unit-metric">1.88 M</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">6 ft 2 in</span><span class="unit-metric">1.88 m</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">キャビン幅</span>
-                        <span class="info-item-value"><span class="unit-imperial">7 FT 4 IN</span><span class="unit-metric">2.24 M</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">7 ft 4 in</span><span class="unit-metric">2.24 m</span></span>
                     </div>
                     <div class="info-item">
-                        <span class="info-item-label">キャビン長 (荷物室含)</span>
-                        <span class="info-item-value"><span class="unit-imperial">50 FT 1 IN</span><span class="unit-metric">15.27 M</span></span>
+                        <span class="info-item-label">キャビン長 (荷物室含む)</span>
+                        <span class="info-item-value"><span class="unit-imperial">50 ft 1 in</span><span class="unit-metric">15.27 m</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">荷物室容積</span>
-                        <span class="info-item-value"><span class="unit-imperial">170 FT³</span><span class="unit-metric">4.81 M³</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">170 ft³</span><span class="unit-metric">4.81 m³</span></span>
                     </div>
                 </div>
             </div>
@@ -446,22 +446,22 @@
     <!-- Exterior Section -->
     <section class="detail-section">
         <div class="detail-section-inner global-inner">
-            <h2 class="detail-section-title global-title">外部</h2>
+            <h2 class="detail-section-title global-title">機体外観</h2>
 
             <div class="design-exterior-row">
                 <div class="info-card global-card design-exterior-specs">
                     <h3>外装寸法</h3>
                     <div class="info-item">
                         <span class="info-item-label">全長</span>
-                        <span class="info-item-value"><span class="unit-imperial">96 FT 5 IN</span><span class="unit-metric">29.39 M</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">96 ft 5 in</span><span class="unit-metric">29.39 m</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">全幅</span>
-                        <span class="info-item-value"><span class="unit-imperial">93 FT 6 IN</span><span class="unit-metric">28.50 M</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">93 ft 6 in</span><span class="unit-metric">28.50 m</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">全高</span>
-                        <span class="info-item-value"><span class="unit-imperial">25 FT 10 IN</span><span class="unit-metric">7.87 M</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">25 ft 10 in</span><span class="unit-metric">7.87 m</span></span>
                     </div>
                 </div>
                 <div class="design-image-cycler" id="exteriorCycler">
@@ -490,25 +490,25 @@
             <!-- powerplant + APU -->
             <div class="info-grid">
                 <div class="info-card global-card">
-                    <h3>パワープラント</h3>
+                    <h3>エンジン</h3>
                     <div class="info-item">
-                        <span class="info-item-label">エンジン</span>
+                        <span class="info-item-label">モデル</span>
                         <span class="info-item-value">ロールスロイス製BR710-C4-11</span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">離陸推力 (2x)</span>
-                        <span class="info-item-value"><span class="unit-imperial">15,385 LBF</span><span class="unit-metric">68.4 KN</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">15,385 lbF</span><span class="unit-metric">68.4 KN</span></span>
                     </div>
                 </div>
                 <div class="info-card global-card">
-                    <h3>APU</h3>
+                    <h3>補助動力装置 (APU)</h3>
                     <div class="info-item">
                         <span class="info-item-label">モデル</span>
                         <span class="info-item-value">Honeywell 36-150</span>
                     </div>
                     <div class="info-item">
-                        <span class="info-item-label">燃料消費</span>
-                        <span class="info-item-value"><span class="unit-imperial">≈ 200 LB/HR</span><span class="unit-metric">91 KG/HR</span></span>
+                        <span class="info-item-label">燃料消費量</span>
+                        <span class="info-item-value"><span class="unit-imperial">≈ 200 lb/hr</span><span class="unit-metric">91 kg/hr</span></span>
                     </div>
                 </div>
             </div>
@@ -536,7 +536,7 @@
         <div class="specs-search-inner global-inner">
             <h2 class="specs-section-title global-title">航空機検索</h2>
             <div class="specs-search-card global-card">
-                <p class="specs-search-desc">お探しの航空機が決まっていますか？以下に入力して直接ページに移動してください</p>
+                <p class="specs-search-desc">お探しの航空機はお決まりですか？以下に入力して、該当ページへ直接移動できます。</p>
                 <div class="search-container">
                     <input type="text" class="search-input" id="searchInput" placeholder="航空機を検索...">
                     <button class="search-button" id="searchButton">
@@ -597,7 +597,7 @@
             var rate = currencyConfig ? currencyConfig.rate : 1;
             var fmt = currencyConfig
                 ? function(n) { return currencyConfig.format(n * rate); }
-                : function(n) { return '$' + Math.round(n).toLocaleString(); };
+                : function(n) { return '$' + math.round(n).toLocaleString(); };
 
             var fuelUsd = readCostUsd('fuelCostValue');
             var hourlyUsd = fuelUsd + computeNonFuelHourly();
