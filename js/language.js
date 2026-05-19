@@ -20,8 +20,8 @@ function initLangSwitcher() {
             .cost-label, .cost-value,
             .tab-btn, .section-title,
             label, span:not(.search-results span):not(.search-result-item span),
-            .chart-title, td, th, li:not(.search-results li),
-            button:not(.tab-btn)
+            .chart-title, td, th, dt, dd, .footer-menu a, li:not(.search-results li),
+            .value, option, button:not(.tab-btn)
         `);
 
         elementsToTranslate.forEach(element => {
@@ -30,7 +30,8 @@ function initLangSwitcher() {
                 element.closest('#airportSuggestions') ||
                 element.closest('.language-switcher') ||
                 element.closest('.nav-list-card') ||
-                element.closest('footer')) {
+                element.closest('.home-linkbox-right') ||
+                element.closest('.general-title')) {
                 return;
             }
 
@@ -74,6 +75,22 @@ function initLangSwitcher() {
         });
 
         translateNavLinks(lang);
+
+        // Replace 海里 / マッハ unit labels inside mixed-content elements
+        // that were skipped by the key-based translation above.
+        (function replaceUnits(node) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                var t = node.textContent;
+                if (lang === 'en' && (t.includes('マッハ') || t.includes('海里'))) {
+                    node.textContent = t.replace(/マッハ/g, 'Mach ').replace(/海里/g, '\u00a0NM');
+                } else if (lang === 'ja' && (t.includes('Mach ') || t.includes('\u00a0NM'))) {
+                    node.textContent = t.replace(/Mach /g, 'マッハ').replace(/\u00a0NM/g, '海里');
+                }
+            } else if (node.nodeType === Node.ELEMENT_NODE &&
+                       node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE') {
+                node.childNodes.forEach(function(c) { replaceUnits(c); });
+            }
+        })(document.body);
     }
 
     function translateNavLinks(lang) {
@@ -137,6 +154,18 @@ function initLangSwitcher() {
 
     langSwitcher.addEventListener('change', function() {
         applyLanguage(this.value);
+    });
+
+    // Re-translate after footer partial is injected (includes.js loads it async)
+    document.addEventListener('footer:loaded', function() {
+        applyLanguage(langSwitcher.value);
+    });
+
+    // Re-translate XJ IR widget content as it loads dynamically
+    document.querySelectorAll('.xj-category, #xj-mainlist, #xj-mainlist-kokoku01, #xj-mainlist-kokoku02, .xj-select-year').forEach(function(container) {
+        new MutationObserver(function() {
+            translatePage(langSwitcher.value);
+        }).observe(container, { childList: true });
     });
 }
 

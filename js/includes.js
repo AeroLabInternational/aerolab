@@ -16,6 +16,8 @@
                 el.outerHTML = html;
                 if (targetId === 'site-nav') {
                     document.dispatchEvent(new Event('nav:loaded'));
+                } else if (targetId === 'site-footer') {
+                    document.dispatchEvent(new Event('footer:loaded'));
                 }
             })
             .catch(function (err) {
