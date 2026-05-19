@@ -111,7 +111,7 @@
   .highlights-card-title { font-size: 1.25rem; margin-bottom: 0.5rem; }
   .highlights-card-text { font-size: 1rem; line-height: 1.9; }
   .highlights-card-year { font-size: 0.9rem; }
-  .highlights-imgBox { flex-direction: column; gap: 0.75rem; margin-top: 0; }
+  .highlights-imgBox { flex-direction: column; gap: 0.75rem; margin-top: 0.75rem; }
   .highlights-imgBox img { width: 100%; height: auto; }
 }
 
